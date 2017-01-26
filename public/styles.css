@@ -26,7 +26,12 @@ body,
 }
 
 .header {
-  height: 20vh;
+  height: 15.8vh;
+}
+
+.heading1,
+.heading2 {
+  height: 5vh;
 }
 
 .content {
@@ -34,7 +39,7 @@ body,
 }
 
 .footer {
-  height: 15vh;
+  height: 19.2vh;
 }
 
 

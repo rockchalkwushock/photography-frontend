@@ -1,8 +1,10 @@
 {
   "env": {
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "extends": "rallycoding",
+  "parser": "babel-eslint",
   "rules": {
     "global-require": 0,
     "no-underscore-dangle": 0,

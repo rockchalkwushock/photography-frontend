@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0, auto;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body,
+#root,
+.application {
+  background-color: #FFF;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.header,
+.content,
+.footer {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 20vh;
+}
+
+.content {
+  height: 65vh;
+}
+
+.footer {
+  height: 15vh;
+}
+
+
+
+
+
+/* Semanitc-UI-React */
+
+.ui.grid {
+  background-color: #FFF;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.ui.grid>.row,
+.ui.grid>* {
+  padding: 0;
+}
+
+.ui.grid>.column:not(.row),
+.ui.grid>.row>.column {
+  padding: 0;
+}
+
+.ui.header {
+  margin: 0;
+}
+
+.ui.menu {
+  margin: 0;
+}

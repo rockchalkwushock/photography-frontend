@@ -12,6 +12,7 @@ const VENDOR_LIBS = [
   'react-router', 'react-router-redux', 'redux',
   'redux-auth-wrapper', 'redux-form', 'redux-pack',
   'redux-persist', 'redux-promise-middleware',
+  'semantic-ui-react'
 ];
 
 module.exports = {

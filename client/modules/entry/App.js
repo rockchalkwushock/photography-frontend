@@ -1,18 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 import { Grid, Header } from 'semantic-ui-react';
-import { NavBar } from '../layout';
+import { Footer, NavBar } from '../layout';
 
 class App extends Component {
   render() {
-    const { children, location } = this.props;
+    const { children } = this.props;
     return (
       <div className="application">
         <Grid>
-          <Grid.Row className='header' color='orange'>
+          <Grid.Row className='header'>
             <Grid.Column mobile={16} tablet={8} computer={4}>
               <Header className='heading1' as='h1'>Masha Eltsova</Header>
               <Header className='heading2' as='h4'>Photography</Header>
-              <NavBar path={location.pathname} />
+              <NavBar />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className='content' color='blue'>
@@ -20,9 +20,9 @@ class App extends Component {
               {children}
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row className='footer' color='orange'>
+          <Grid.Row className='footer'>
             <Grid.Column mobile={16} tablet={8} computer={4}>
-              Footer
+              <Footer />
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -32,8 +32,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.element.isRequired,
-  location: PropTypes.object.isRequired
+  children: PropTypes.element.isRequired
 };
 
 export default App;

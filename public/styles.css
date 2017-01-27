@@ -32,19 +32,34 @@ body,
 .heading1,
 .heading2 {
   height: 5vh;
+  letter-spacing: 1.1px;
 }
 
-.content {
+.heading1 {
+  text-shadow: 4px 2px 4px rgba(0,0,0,0.50);
+}
+
+.heading2 {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.50);
+}
+
+.content,
+.homepage,
+.portfolio {
   height: 65vh;
+}
+
+.homepage,
+.portfolio {
+  padding: 0.5em;
 }
 
 .footer {
   height: 19.2vh;
+  letter-spacing: 1.1px;
+  font-family: SavoyeLetPlain;
+  font-size: 18px;
 }
-
-
-
-
 
 /* Semanitc-UI-React */
 
@@ -67,8 +82,53 @@ body,
 
 .ui.header {
   margin: 0;
+  font-family: SavoyeLetPlain;
+}
+
+h1.ui.header {
+  font-size: 48px;
+}
+
+h4.ui.header {
+  font-size: 18px;
 }
 
 .ui.menu {
   margin: 0;
+  border: none;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.50);
 }
+
+/* React-Slick Carousel */
+.slick-initialized,
+.slick-slider,
+.slick-list {
+  height: 50vh;
+}
+
+/*
+background: #FFFFFF;
+
+font-family: SavoyeLetPlain;
+font-size: 48px;
+color: #000000;
+letter-spacing: 1.1px;
+text-shadow: 4px 2px 4px rgba(0,0,0,0.50);
+
+font-family: SavoyeLetPlain;
+font-size: 18px;
+color: #000000;
+letter-spacing: 1.1px;
+text-shadow: 4px 2px 4px rgba(0,0,0,0.50);
+
+background: #FFFFFF;
+
+border: 1px solid #979797;
+
+
+font-family: SavoyeLetPlain;
+font-size: 18px;
+color: #000000;
+letter-spacing: 1.1px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.50);
+*/

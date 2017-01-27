@@ -22,6 +22,14 @@ const componentRoutes = {
       }
     },
     {
+      path: '/portfolio/:collection',
+      getComponent(location, cb) {
+        System.import('./modules/portfolio/Portfolio')
+        .then(loadRoute(cb))
+        .catch(errorLoading);
+      }
+    },
+    {
       path: '*',
       getComponent(location, cb) {
         System.import('./modules/layout/Page404')

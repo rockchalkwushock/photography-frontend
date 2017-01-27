@@ -39,3 +39,4 @@ jspm_packages
 # Other
 .env
 .DS_Store
+dist/

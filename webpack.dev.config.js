@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
+
 const VENDOR_LIBS = [
   'axios', 'react', 'react-dom', 'react-redux',
   'react-redux-multilingual', 'react-router',
@@ -72,7 +73,8 @@ module.exports = {
     }),
     new ExtractTextPlugin('style.css'),
     new BundleAnalyzerPlugin({
-      analyzerPort: 9001
+      analyzerPort: 9001,
+      openAnalyzer: false
     })
   ]
 };

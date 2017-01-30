@@ -7,9 +7,10 @@
   "author": "Cody Brunner <rockchalkwushock@icloud.com>",
   "license": "MIT",
   "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
     "build": "cross-env yarn run clean && NODE_ENV=production webpack -p --progress --config webpack.prod.config.js",
     "clean": "rimraf dist npm-debug.log.*",
-    "dev:c": "cross-env NODE_ENV=development webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js",
+    "dev:c": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.config.js",
     "dev:s": "cross-env NODE_ENV=development nodemon index.js",
     "test": "jest"
   },
@@ -35,6 +36,7 @@
     "extract-text-webpack-plugin": "2.0.0-beta.5",
     "html-webpack-plugin": "^2.26.0",
     "jest": "^18.1.0",
+    "offline-plugin": "^4.5.5",
     "react-addons-test-utils": "^15.4.2",
     "react-hot-loader": "3.0.0-beta.6",
     "react-test-renderer": "^15.4.2",

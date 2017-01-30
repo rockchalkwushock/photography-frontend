@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const { join } = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const OfflinePlugin = require('offline-plugin');
 
 const VENDOR_LIBS = [
   'axios', 'react', 'react-dom', 'react-redux',
@@ -56,8 +56,6 @@ module.exports = {
       template: 'public/index.html'
     }),
     new ExtractTextPlugin('style.css'),
-    new BundleAnalyzerPlugin({
-      analyzerPort: 9001
-    })
+    new OfflinePlugin(),
   ]
 };

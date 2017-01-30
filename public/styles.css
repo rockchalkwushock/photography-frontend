@@ -17,15 +17,15 @@ body,
   padding: 0;
 }
 
-.header,
+.top,
 .content,
-.footer {
+.bottom {
   text-align: center;
   margin: 0;
   padding: 0;
 }
 
-.header {
+.top {
   height: 15.8vh;
 }
 

@@ -8,23 +8,32 @@ class App extends Component {
     return (
       <div className="application">
         <Grid>
-          <Grid.Row className='header'>
-            <Grid.Column mobile={16} tablet={8} computer={4}>
-              <Header className='heading1' as='h1'>{translate('title')}</Header>
-              <Header className='heading2' as='h3'>{translate('sub-title')}</Header>
-              <NavBar />
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row className='content'>
-            <Grid.Column mobile={16} tablet={8} computer={4}>
-              {children}
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row className='footer'>
-            <Grid.Column mobile={16} tablet={8} computer={4}>
-              <Footer />
-            </Grid.Column>
-          </Grid.Row>
+          <Grid.Column
+            className='top'
+            mobile={16}
+            tablet={8}
+            computer={4}
+          >
+            <Header className='heading1' as='h1'>{translate('title')}</Header>
+            <Header className='heading2' as='h3'>{translate('sub-title')}</Header>
+            <NavBar />
+          </Grid.Column>
+          <Grid.Column
+            className='content'
+            mobile={16}
+            tablet={8}
+            computer={4}
+          >
+            {children}
+          </Grid.Column>
+          <Grid.Column
+            className='bottom'
+            mobile={16}
+            tablet={8}
+            computer={4}
+          >
+            <Footer />
+          </Grid.Column>
         </Grid>
       </div>
     );

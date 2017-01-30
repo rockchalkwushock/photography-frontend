@@ -7,7 +7,7 @@
   "author": "Cody Brunner <rockchalkwushock@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "build": "cross-env yarn run clean && NODE_ENV=production webpack -p --config webpack.prod.config.js",
+    "build": "cross-env yarn run clean && NODE_ENV=production webpack -p --progress --config webpack.prod.config.js",
     "clean": "rimraf dist npm-debug.log.*",
     "dev:c": "cross-env NODE_ENV=development webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js",
     "dev:s": "cross-env NODE_ENV=development nodemon index.js",
@@ -41,6 +41,7 @@
     "redux-devtools-extension": "^1.0.0",
     "rimraf": "^2.5.4",
     "webpack": "2.2.0-rc.0",
+    "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dashboard": "^0.2.1",
     "webpack-dev-middleware": "^1.9.0",
     "webpack-dev-server": "2.2.0-rc.0"

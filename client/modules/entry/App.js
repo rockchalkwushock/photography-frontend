@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Grid, Header } from 'semantic-ui-react';
+import { Grid, Header } from 'semantic-ui-react/dist/es';
 import { Footer, NavBar } from '../layout';
 
 class App extends Component {

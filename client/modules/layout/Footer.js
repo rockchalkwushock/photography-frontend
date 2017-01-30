@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Icon } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react/dist/es';
 import { withTranslate } from 'react-redux-multilingual';
 import SocialBar from './SocialBar';
 

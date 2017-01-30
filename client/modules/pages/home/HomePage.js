@@ -1,6 +1,6 @@
 import React from 'react';
 import { browserHistory } from 'react-router/es';
-import { Card } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react/dist/es';
 
 const src = 'http://funnyasduck.net/wp-content/uploads/2012/11/funny-darth-vader-drinking-tea-dark-side-star-wars-great-pics.jpg';
 

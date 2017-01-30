@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { browserHistory } from 'react-router/es';
 import { IntlActions, withTranslate } from 'react-redux-multilingual';
-import { Dropdown, Menu } from 'semantic-ui-react';
+import { Dropdown, Menu } from 'semantic-ui-react/dist/es';
 import { store } from '../../redux/store';
 
 const NavBar = ({ translate }) => (

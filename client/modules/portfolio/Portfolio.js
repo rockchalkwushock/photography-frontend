@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import { Image, Label } from 'semantic-ui-react';
+import { Image, Label } from 'semantic-ui-react/dist/es';
 
 const images = [
   'http://funnyasduck.net/wp-content/uploads/2012/11/funny-darth-vader-drinking-tea-dark-side-star-wars-great-pics.jpg',

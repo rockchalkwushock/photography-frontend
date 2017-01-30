@@ -1,8 +1,8 @@
 const webpack = require('webpack');
-const path = require('path');
+const { join } = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const VENDOR_LIBS = [
   'axios', 'react', 'react-dom', 'react-redux',
@@ -24,7 +24,7 @@ module.exports = {
     vendor: VENDOR_LIBS,
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: join(__dirname, 'dist'),
     filename: '[name].js',
     publicPath: '/'
   },
@@ -48,13 +48,10 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
+    contentBase: join(__dirname, 'dist'),
     port: 9000,
     hot: true,
-    inline: true,
     historyApiFallback: true,
-    quiet: true,
     proxy: {
       '/api': 'http://localhost:3000'
     }
@@ -68,12 +65,14 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest']
     }),
-    new DashboardPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       template: 'public/index.html'
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
     new ExtractTextPlugin('style.css'),
+    new BundleAnalyzerPlugin({
+      analyzerPort: 9001
+    })
   ]
 };

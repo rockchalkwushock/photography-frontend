@@ -1,5 +1,3 @@
-require('dotenv-safe').load();
-
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -8,11 +6,10 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const VENDOR_LIBS = [
   'axios', 'react', 'react-dom', 'react-redux',
-  'react-redux-multilingual', 'react-redux-toastr',
-  'react-router', 'react-router-redux', 'redux',
-  'redux-auth-wrapper', 'redux-form', 'redux-pack',
-  'redux-persist', 'redux-promise-middleware',
-  'semantic-ui-react', 'react-slick'
+  'react-redux-multilingual', 'react-router',
+  'react-router-redux', 'redux', 'redux-pack',
+  'redux-promise-middleware', 'semantic-ui-react',
+  'react-slick'
 ];
 
 module.exports = {
@@ -62,9 +59,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        CLOUD_NAME: JSON.stringify(process.env.CLOUD_NAME),
-        UPLOAD_PRESET: JSON.stringify(process.env.UPLOAD_PRESET),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     }),
     new webpack.optimize.CommonsChunkPlugin({

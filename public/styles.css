@@ -43,6 +43,10 @@ body,
   text-shadow: 2px 2px 4px rgba(0,0,0,0.50);
 }
 
+.nav {
+  height: 4vh;
+}
+
 .content,
 .homepage,
 .portfolio {
@@ -111,6 +115,7 @@ h4.ui.header {
   margin: 0;
   border: none;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,0.50);
+  min-height: 0;
 }
 
 .ui.centered.card {

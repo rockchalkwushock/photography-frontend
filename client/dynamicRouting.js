@@ -1,4 +1,4 @@
-import App from './modules/entry/App';
+import AppContainer from './modules/entry/AppContainer';
 import HomePage from './modules/pages/home/HomePage';
 
 const errorLoading = err => (
@@ -9,14 +9,14 @@ const loadRoute = cb => (
 );
 
 const componentRoutes = {
-  component: App,
+  component: AppContainer,
   path: '/',
   indexRoute: { component: HomePage },
   childRoutes: [
     {
       path: '/about',
       getComponent(location, cb) {
-        System.import('./modules/pages/about/About')
+        System.import('./modules/pages/about/AboutContainer')
         .then(loadRoute(cb))
         .catch(errorLoading);
       }

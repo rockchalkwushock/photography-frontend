@@ -1,1 +1,3 @@
-export * from './about';
+import pagesReducer from './reducers';
+
+export { pagesReducer };

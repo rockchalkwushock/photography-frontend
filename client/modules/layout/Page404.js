@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { withTranslate } from 'react-redux-multilingual';
 
-const Page404 = () => (
+const Page404 = ({ translate }) => (
   <div className="page404">
-    Page Not Found
+    {translate('page404')}
   </div>
 );
 
-export default Page404;
+Page404.propTypes = {
+  translate: PropTypes.func
+};
+
+export default withTranslate(Page404);

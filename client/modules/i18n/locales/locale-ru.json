@@ -1,0 +1,12 @@
+{
+  "locale": "ru",
+  "messages": {
+    "title": "Маша Ельцова",
+    "sub-title": "фотография",
+    "home-btn": "Главная",
+    "about-btn": "Около",
+    "copyright": "Развитие RCWS",
+    "description": "временный",
+    "page404": "Страница не найдена"
+  }
+}

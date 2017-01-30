@@ -1,0 +1,12 @@
+{
+  "locale": "en",
+  "messages": {
+    "title": "Masha Eltsova",
+    "sub-title": "Photography",
+    "home-btn": "Home",
+    "about-btn": "About",
+    "copyright": "RCWS Development",
+    "description": "Temporary",
+    "page404": "Page Not Found"
+  }
+}

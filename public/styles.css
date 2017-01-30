@@ -61,6 +61,10 @@ body,
   font-size: 18px;
 }
 
+.socialbar {
+  margin-bottom: 1em;
+}
+
 /* About Page */
 .aboutpage {
   height: 65vh;
@@ -89,6 +93,10 @@ body,
 .ui.header {
   margin: 0;
   font-family: SavoyeLetPlain;
+}
+
+.four.wide.computer.sixteen.wide.mobile.eight.wide.tablet.column {
+  padding-top: 1em;
 }
 
 h1.ui.header {

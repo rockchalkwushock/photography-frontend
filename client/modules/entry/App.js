@@ -11,7 +11,7 @@ class App extends Component {
           <Grid.Row className='header'>
             <Grid.Column mobile={16} tablet={8} computer={4}>
               <Header className='heading1' as='h1'>Masha Eltsova</Header>
-              <Header className='heading2' as='h4'>Photography</Header>
+              <Header className='heading2' as='h3'>Photography</Header>
               <NavBar />
             </Grid.Column>
           </Grid.Row>

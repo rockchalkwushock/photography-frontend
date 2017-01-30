@@ -54,7 +54,10 @@ module.exports = {
     hot: true,
     inline: true,
     historyApiFallback: true,
-    quiet: true
+    quiet: true,
+    proxy: {
+      '/api': 'http://localhost:3000'
+    }
   },
   plugins: [
     new webpack.DefinePlugin({

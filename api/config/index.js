@@ -1,3 +1,5 @@
+
+import dbConfig from './dbConfig';
 import middlewaresConfig from './middlewares';
 
-export { middlewaresConfig };
+export { dbConfig, middlewaresConfig };

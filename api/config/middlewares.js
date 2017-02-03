@@ -3,7 +3,6 @@ import morgan from 'morgan';
 import cors from 'cors';
 import compression from 'compression';
 import { PORT } from '../';
-import { categoryRoutes } from '../module';
 
 export default app => {
   app.use((req, res, next) => {
@@ -22,5 +21,4 @@ export default app => {
   app.use(morgan('dev'));
   app.use(cors());
   app.use(compression());
-  app.use('/api/v1', [categoryRoutes]);
 };

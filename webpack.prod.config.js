@@ -7,7 +7,11 @@ const OfflinePlugin = require('offline-plugin');
 const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const VENDOR_LIBS = [];
+const VENDOR_LIBS = [
+  'react', 'react-dom', 'react-router',
+  'react-redux', 'react-router-redux', 'redux',
+  'styled-components'
+];
 
 module.exports = {
   devtool: 'source-map',

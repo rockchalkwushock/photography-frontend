@@ -15,7 +15,7 @@ module.exports = {
   entry: {
     bundle: [
       'babel-polyfill',
-      './src/index.js'
+      './client/index.js'
     ],
     vendor: VENDOR_LIBS
   },
@@ -46,7 +46,7 @@ module.exports = {
             loader: 'url-loader',
             options: { limit: 40000 }
           },
-          'image-webpack-loader' // first one append
+          'image-webpack-loader'
         ]
       }
     ]
@@ -72,19 +72,19 @@ module.exports = {
     }),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'client/index.html'
     }),
     new CopyWebpackPlugin([
-      { from: './src/manifest.json', to: 'manifest.json' }
+      { from: './client/manifest.json', to: 'manifest.json' }
     ]),
     new ExtractTextPlugin('styles.css'),
     new SWPrecacheWebpackPlugin({
       staticFileGlobs: [
-      'src/styles/styles.css',
+      'src/styles.css',
      ],
       stripPrefix: 'src/static/',
       mergeStaticsConfig: true,
-      staticFileGlobsIgnorePatterns: [/\.map$/], // use this to ignore sourcemap files
+      staticFileGlobsIgnorePatterns: [/\.map$/],
     }),
     new OfflinePlugin()
   ]

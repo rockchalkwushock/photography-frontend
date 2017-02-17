@@ -14,7 +14,7 @@ module.exports = {
       'react-hot-loader/patch',
       'webpack-dev-server/client?http://localhost:9000',
       'webpack/hot/only-dev-server',
-      './src/index.js'
+      './client/index.js'
     ],
     vendor: VENDOR_LIBS
   },
@@ -58,7 +58,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'client/index.html'
     }),
     new ExtractTextPlugin('style.css'),
   ]

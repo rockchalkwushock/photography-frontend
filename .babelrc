@@ -1,0 +1,23 @@
+{
+  "env": {
+    "development": {
+      "presets": [["es2015", {"modules": false}], "react", "stage-0"],
+      "plugins": [
+        "react-hot-loader/babel",
+        "transform-decorators-legacy",
+        "syntax-flow",
+        "transform-flow-strip-types",
+        "syntax-dynamic-import"
+      ]
+    },
+    "production": {
+      "presets": [["es2015", {"modules": false}], "react", "stage-0"],
+      "plugins": [
+        "transform-decorators-legacy",
+        "syntax-flow",
+        "transform-flow-strip-types",
+        "syntax-dynamic-import"
+      ]
+    }
+  }
+}

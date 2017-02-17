@@ -1,0 +1,25 @@
+{
+  "name": "masha-eltsova-photography",
+  "version": "0.1.0",
+  "description": "Masha Eltsova Photography",
+  "main": "index.js",
+  "repository": "https://github.com/rockchalkwushock/photography-frontend.git",
+  "author": "Cody Brunner <rockchalkwushock@icloud.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "eslint-config-equimper": "^1.4.0",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "eslint-plugin-flowtype-errors": "^3.0.0",
+    "flow-bin": "^0.39.0",
+    "flow-typed": "^2.0.0",
+    "react-hot-loader": "3.0.0-beta.6",
+    "redbox-react": "^1.3.3"
+  }
+}

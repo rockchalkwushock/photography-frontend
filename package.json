@@ -51,6 +51,7 @@
     "compression": "^1.6.2",
     "cors": "^2.8.1",
     "express": "^4.14.1",
+    "font-awesome": "^4.7.0",
     "morgan": "^1.8.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

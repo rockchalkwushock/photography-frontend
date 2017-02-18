@@ -12,10 +12,10 @@ html {
   APP LAYOUT
   <body>
     <div id="root">
-      <div class="application flex-container">
-        <div class="top flex-item"></div> <-- header & navigation
-        <div class="middle flex-item"></div> <-- content inject happens here
-        <div class="bottom flex-item"></div> <-- social media icons & legal
+      <div class="application">
+        <div class="top"></div> <-- header & navigation
+        <div class="middle"></div> <-- content inject happens here
+        <div class="bottom"></div> <-- social media icons & legal
       </div>
     </div>
   </body>
@@ -37,6 +37,40 @@ body,
   height: auto;
 }
 
-.flex-item {
+.application > * {
   flex: 1 1 auto;
+  width: 100vw;
+  height: auto;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: .25em;
+  overflow-y: scroll;
+}
+
+.homepage > * {
+  flex: 1 1 auto;
+}
+
+.bottom,
+.top {
+  display: flex;
+}
+
+.footer {
+  height: 17vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,2 +1,2 @@
-
+html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}#root,body{margin:0;background-color:#000;font-family:SavoyeLetPlain}.application{background-color:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:auto}.flex-item{-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto}
 /*# sourceMappingURL=styles.css.map*/

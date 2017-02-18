@@ -8,7 +8,7 @@ import {
 } from '../commons';
 
 const Header = () => (
-  <div className="heading flex-item">
+  <div className="heading">
     <div className="titles">
       <Title>Masha Eltsova</Title>
       <SubTitle>Photography</SubTitle>

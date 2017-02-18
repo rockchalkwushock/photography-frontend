@@ -24,7 +24,6 @@ const Footer = () => (
       </a>
       <a
         className='icon'
-        target='_blank'
         rel='noreferrer noopener'
         href='mailto:mashaeltsova@mail.ru'
         title='email'

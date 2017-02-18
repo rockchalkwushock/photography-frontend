@@ -52,6 +52,10 @@ module.exports = {
           },
           'image-webpack-loader'
         ]
+      },
+      {
+        test: /fonts\/.*\.(woff|woff2|eot|ttf|svg)$/,
+        loader: 'file-loader?name="[name]-[hash].[ext]"',
       }
     ]
   },

@@ -24,15 +24,19 @@ html {
 body,
 #root {
   margin: 0;
-  padding-left: 5vh;
-  padding-right: 5vh;
   background-color: black;
+  font-family: SavoyeLetPlain;
 }
 
 .application {
   background-color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: auto;
+}
+
+.flex-item {
+  flex: 1 1 auto;
 }

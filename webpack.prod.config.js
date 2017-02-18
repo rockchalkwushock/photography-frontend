@@ -84,7 +84,7 @@ module.exports = {
     new ExtractTextPlugin('styles.css'),
     new SWPrecacheWebpackPlugin({
       staticFileGlobs: [
-      'src/styles.css',
+      'src/styles/styles.css',
      ],
       stripPrefix: 'src/static/',
       mergeStaticsConfig: true,

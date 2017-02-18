@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import Root from './Root';
 import { store } from './redux';
-import './styles.css';
+import './styles/styles.css';
 
 if (process.env.NODE_ENV === 'production') {
   (() => {

@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*
+  APP LAYOUT
+  <body>
+    <div id="root">
+      <div class="application flex-container">
+        <div class="top flex-item"></div> <-- header & navigation
+        <div class="middle flex-item"></div> <-- content inject happens here
+        <div class="bottom flex-item"></div> <-- social media icons & legal
+      </div>
+    </div>
+  </body>
+*/
+
+body,
+#root {
+  margin: 0;
+  padding-left: 5vh;
+  padding-right: 5vh;
+  background-color: black;
+}
+
+.application {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}

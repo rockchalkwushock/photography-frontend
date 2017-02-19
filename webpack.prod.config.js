@@ -8,8 +8,8 @@ const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const VENDOR_LIBS = [
-  'font-awesome', 'normalize.css', 'nuka-carousel',
-  'react', 'react-dom', 'react-redux', 'react-router',
+  'nuka-carousel', 'react', 'react-dom',
+  'react-redux', 'react-router',
   'react-router-redux', 'redux', 'redux-thunk',
   'styled-components'
 ];

@@ -1,7 +1,10 @@
 import React from 'react';
+import { AppCarousel } from '../modules';
 
 const Portfolio = () => (
-  <h1>This is the Portfolio Page.</h1>
+  <div className="portfoliopage">
+    <AppCarousel />
+  </div>
 );
 
 export default Portfolio;

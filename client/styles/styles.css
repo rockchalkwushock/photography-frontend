@@ -1,3 +1,5 @@
+@import "~normalize.css";
+
 html {
   box-sizing: border-box;
 }
@@ -7,19 +9,6 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
-/*
-  APP LAYOUT
-  <body>
-    <div id="root">
-      <div class="application">
-        <div class="top"></div> <-- header & navigation
-        <div class="middle"></div> <-- content inject happens here
-        <div class="bottom"></div> <-- social media icons & legal
-      </div>
-    </div>
-  </body>
-*/
 
 body,
 #root {
@@ -73,4 +62,8 @@ body,
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+i {
+  color: #515E91;
 }

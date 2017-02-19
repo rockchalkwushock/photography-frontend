@@ -17,7 +17,6 @@ const Header = () => (
       <NavBar>
         <NavItem onClick={() => browserHistory.push('/')}>Home</NavItem>
         <NavItem onClick={() => browserHistory.push('/about')}>About</NavItem>
-        <NavItem onClick={() => browserHistory.push('/portfolio')}>Portfolio</NavItem>
       </NavBar>
     </div>
   </div>

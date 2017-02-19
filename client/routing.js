@@ -21,7 +21,7 @@ const componentRoutes = {
       }
     },
     {
-      path: '/portfolio',
+      path: '/portfolio/:collection',
       async getComponent(location, cb) {
         try {
           const module = await import('./pages/Portfolio');

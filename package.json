@@ -52,6 +52,7 @@
     "cors": "^2.8.1",
     "express": "^4.14.1",
     "font-awesome": "^4.7.0",
+    "mongoose": "^4.8.4",
     "morgan": "^1.8.1",
     "normalize.css": "^5.0.0",
     "nuka-carousel": "^2.0.4",

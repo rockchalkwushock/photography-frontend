@@ -1,9 +1,9 @@
+import axios from 'axios';
 import { FETCH_COLLECTION } from './types';
 /**
- * fetchCollection(name)
- * - @param name: string
- * - Awaits return of fetchApiCollection.
- * - Dispatches to Redux Store.
+ * fetchCollection(arg)
+ * - @param {String} name
+ * - @returns {Object}
  */
 export const fetchCollection = name => async dispatch => {
   const data = await dispatch(fetchApiCollection(name));
@@ -14,12 +14,26 @@ export const fetchCollection = name => async dispatch => {
   };
 };
 /**
- * fetchApiCollection(name)
- * - @param name: string
- * - GET Request to 'api/v1/collection'.
- * - returns collection of images by name from database.
+ * fetchApiCollection(arg)
+ * - @param {String} name
+ * - @returns {Object} res.data
  */
 export const fetchApiCollection = async name => {
   const { data } = axios.get(`/api/v1/collection/${name}`);
   return data;
 };
+
+// NOTE: res.data
+/**
+ * CODE 200
+ * {
+ *  error: false,
+ *  [name]: array,
+ * }
+ *
+ * CODE 500
+ * {
+ *  error: true,
+ *  message: 'Internal Server Error.',
+ * }
+ */

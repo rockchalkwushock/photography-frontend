@@ -1,6 +1,7 @@
 import Card from './Card';
 import Image from './Image';
 import LegalBar from './LegalBar';
+import Loader from './Loader';
 import NavBar from './NavBar';
 import NavItem from './NavItem';
 import ProfilePic from './ProfilePic';
@@ -13,6 +14,7 @@ export {
   Card,
   Image,
   LegalBar,
+  Loader,
   NavBar,
   NavItem,
   ProfilePic,

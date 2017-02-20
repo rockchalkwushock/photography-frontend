@@ -1,24 +1,22 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux/es';
 import Carousel from 'nuka-carousel';
+import { Loader } from '../../commons';
 
-// TODO: @connect()
 class AppCarousel extends Component {
   state = { loading: true }
-  // componentDidMount() {
-  //   (async () => {
-  //     if () {
-  //       // TODO: await fetchPhotos();
-  //       // TODO: this.setState({ loading: false})
-  //     } else {
-  //       // TODO: this.setState({ loading: false})
-  //     }
-  //   })();
-  // }
+  /**
+   * componentDidMount
+   * -
+   * -
+   */
+  componentDidMount() {
+    // Handle passing of props & loading state here.
+    // this.props.photos === the exact array specified.
+  }
   render() {
-    // if (this.state.loading) {
-    //   // TODO: return LoadingComponent;
-    // }
+    if (this.state.loading) {
+      return <Loader />;
+    }
     return (
       <Carousel>
         <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide1" alt='poop' />

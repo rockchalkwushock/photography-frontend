@@ -1,4 +1,5 @@
 import AppCarousel from './AppCarousel';
 import carouselReducer from './reducer';
+import { fetchCollection } from './actions';
 
-export { carouselReducer, AppCarousel };
+export { AppCarousel, carouselReducer, fetchCollection };

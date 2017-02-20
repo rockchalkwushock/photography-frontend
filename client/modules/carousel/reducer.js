@@ -1,10 +1,12 @@
 import { FETCH_COLLECTION } from './types';
 
 const initialState = {
- family: [],
- portrait: [],
- travel: [],
- wedding: []
+  about: [],
+  family: [],
+  home: [],
+  portrait: [],
+  travel: [],
+  wedding: []
 };
 
 

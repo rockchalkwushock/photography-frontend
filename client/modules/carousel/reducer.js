@@ -1,20 +1,18 @@
-import { FAMILY, PORTRAIT, TRAVEL, WEDDING } from './types';
+import { FETCH_COLLECTION } from './types';
 
 const initialState = {
-
+ family: [],
+ portrait: [],
+ travel: [],
+ wedding: []
 };
 
+
 export default (state = initialState, action) => {
-  const { payload, type } = action;
+  const { data, name , type } = action;
   switch (type) {
-    case FAMILY:
-    case PORTRAIT:
-    case TRAVEL:
-    case WEDDING:
-      return {
-        ...state,
-        payload
-      };
+    case FETCH_COLLECTION:
+      return { ...state, name: data };
     default:
       return state;
   }

@@ -1,4 +1,1 @@
-export const FAMILY = 'FAMILY';
-export const PORTRAITS = 'PORTRAITS';
-export const TRAVEL = 'TRAVEL';
-export const WEDDING = 'WEDDING';
+export const FETCH_COLLECTION = 'FETCH_COLLECTION';

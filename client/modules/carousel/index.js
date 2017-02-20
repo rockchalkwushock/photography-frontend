@@ -1,3 +1,4 @@
 import AppCarousel from './AppCarousel';
+import carouselReducer from './reducer';
 
-export { AppCarousel };
+export { carouselReducer, AppCarousel };

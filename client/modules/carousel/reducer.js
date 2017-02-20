@@ -9,10 +9,10 @@ const initialState = {
 
 
 export default (state = initialState, action) => {
-  const { data, name , type } = action;
+  const { data, name, type } = action;
   switch (type) {
     case FETCH_COLLECTION:
-      return { ...state, name: data };
+      return { ...state, [name]: [data] };
     default:
       return state;
   }

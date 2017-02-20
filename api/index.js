@@ -4,12 +4,9 @@ import { dbConfig, middlewaresConfig } from './config';
 
 const app = express();
 const MODE = process.env.NODE_ENV;
-
 const PORT = process.env.PORT || 3000;
 
 middlewaresConfig(app);
-
-// TODO: app.use('/api/v1', PostRoutes);
 
 if (MODE !== 'production') {
   // development environment

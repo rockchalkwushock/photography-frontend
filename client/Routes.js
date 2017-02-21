@@ -1,3 +1,6 @@
+import React from 'react';
+import { Router } from 'react-router/es';
+import { history } from './redux';
 import App from './layout/App';
 import Home from './pages/Home';
 
@@ -45,4 +48,6 @@ const componentRoutes = {
   ]
 };
 
-export default componentRoutes;
+export default () => (
+  <Router history={history} key={Math.random()} routes={componentRoutes} />
+);

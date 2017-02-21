@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const VENDOR_LIBS = [
-  'nuka-carousel', 'react', 'react-dom',
-  'react-redux', 'react-router',
+  'axios', 'nuka-carousel', 'react',
+  'react-dom', 'react-redux', 'react-router',
   'react-router-redux', 'redux', 'redux-thunk',
   'styled-components'
 ];

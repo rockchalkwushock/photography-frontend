@@ -7,7 +7,7 @@ import mongoose, { Schema } from 'mongoose';
  */
 const CollectionSchema = new Schema({
   // Declare a unique name for each collection.
-  name: {
+  category: {
     required: true,
     type: String,
     unique: true

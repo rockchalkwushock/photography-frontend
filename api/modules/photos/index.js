@@ -1,3 +1,4 @@
 import Photo from './model';
+import photoRoutes from './routes';
 
-export { Photo };
+export { photoRoutes, Photo };

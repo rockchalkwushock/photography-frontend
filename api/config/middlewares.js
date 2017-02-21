@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import compression from 'compression';
 import cors from 'cors';
 import { PORT } from '../index';
-import { collectionRoutes } from '../modules';
+import { collectionRoutes, photoRoutes } from '../modules';
 /**
  * middlewaresConfig(arg)
  * - @param {Class} app
@@ -27,5 +27,5 @@ export default app => {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(morgan('dev'));
   // Server Routing
-  app.use('/api/v1', [collectionRoutes]);
+  app.use('/api/v1', [collectionRoutes, photoRoutes]);
 };

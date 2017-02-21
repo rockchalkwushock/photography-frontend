@@ -6,8 +6,8 @@ import { PORT } from '../index';
 import { collectionRoutes } from '../modules';
 /**
  * middlewaresConfig(arg)
- * - @param {Function} app
- * - @returns
+ * - @param {Class} app
+ * - @return {Class} app
  */
 export default app => {
   app.use((req, res, next) => {

@@ -30,6 +30,8 @@ class About extends Component {
     // that the array is populated with a file.
     if (this.state.loading) {
       return <Loader />;
+    } else if (photo.length === 0) {
+      return <h1>No Photo Found</h1>; // TODO: Find a better handler.
     }
     return (
       <div className="aboutpage">

@@ -27,19 +27,21 @@ class Home extends Component {
   /**
    * _onClick(arg)
    * - @param {String} collection
-   * - @return ??? {Object} || {Funciton}
+   * - @return {Promise}
    * - calls for fetch of collection of photos by ${collection} to /api/v1.
    * - updates state.carousel.
    * - redirects to /portfolio/${collection}.
    */
-  _onClick(collection) {
-    this.props.fetchCollection(collection);
+  async _onClick(collection) {
+    await this.props.fetchCollection(collection);
     browserHistory.push(`/portfolio/${collection}`);
   }
   render() {
     const { photos } = this.props;
     if (this.state.loading) {
       return <Loader />;
+    } else if (photos.length === 0) {
+      return <h1>No Photos Found</h1>; // TODO: Find a better handler.
     }
     return (
       <div className="homepage">

@@ -18,12 +18,11 @@ const initialState = {
  * carouselReducer(arg1, arg2)
  * - @param {Object} state (initialState)
  * - @param {Object} action
- * - @returns {Object} state (new instance)
- * - returns current state object.
+ * - @return {Object} state (new instance)
  * - NOTE:
  * - type = String
  * - name = String
- * - data = Object
+ * - data = Object { error, message, [name] }
  */
 export default (state = initialState, action) => {
   const { data, name, type } = action;
@@ -31,7 +30,7 @@ export default (state = initialState, action) => {
     case FETCH_COLLECTION:
       return { ...state, [name]: data[name] };
     case FETCH_COLLECTION_ERROR:
-      return { ...state, error: true, message: data.message };
+      return { ...state, error: data.error, message: data.message };
     default:
       return state;
   }

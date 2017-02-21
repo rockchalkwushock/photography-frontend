@@ -6,7 +6,7 @@ import { fetchCollection } from '../modules';
 
 @connect(
   state => ({
-    photos: state.carousel
+    photos: state.carousel.home
   }),
   { fetchCollection }
 )
@@ -48,13 +48,13 @@ class Home extends Component {
             photos={photos.family} // pass to AppCarousel the exact array of images needed.
             onClick={() => this._onClick('family')}
           >
-            <Image src={photos.home[0]} />
+            <Image src={photos[0]} />
           </Card>
           <Card
             photos={photos.portrait}
             onClick={() => this._onClick('portrait')}
           >
-            <Image src={photos.home[1]} />
+            <Image src={photos[1]} />
           </Card>
         </div>
         <div className="bottom">
@@ -62,13 +62,13 @@ class Home extends Component {
             photos={photos.travel}
             onClick={() => this._onClick('travel')}
           >
-            <Image src={photos.home[2]} />
+            <Image src={photos[2]} />
           </Card>
           <Card
             photos={photos.wedding}
             onClick={() => this._onClick('wedding')}
           >
-            <Image src={photos.home[3]} />
+            <Image src={photos[3]} />
           </Card>
         </div>
       </div>

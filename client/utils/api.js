@@ -2,14 +2,26 @@ import axios from 'axios';
 import './axiosConfig';
 
 /**
- * fetchApiCollection(arg)
- * - @param {String} name
- * - @returns {Object} res.data
+ * CollectionApi
+ * - @method fetchCollection(name)
  */
-export const fetchApiCollection = async name => {
-  const { data } = await axios.get(`/api/v1/collection/${name}`);
-  return data;
-};
+export class CollectionApi {
+  /**
+   * CollectionApi.fetchCollection(arg)
+   * - @param {String} name
+   * - @return {Object} { data } = res || res.data
+  */
+  async fetchCollection(name) {
+    try {
+      const { data } = await axios.get(`/api/v1/collection/${name}`);
+      return data;
+    } catch (e) {
+      // Want to access data.error so that if it is true
+      // I can return to the front-end only data.message.
+      console.log(e);
+    }
+  }
+}
 
 // NOTE: res.data
 /**

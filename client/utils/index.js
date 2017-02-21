@@ -1,3 +1,3 @@
-import { fetchApiCollection } from './api';
+import { CollectionApi } from './api';
 
-export { fetchApiCollection };
+export { CollectionApi };

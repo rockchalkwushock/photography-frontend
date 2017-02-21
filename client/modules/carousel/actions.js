@@ -1,5 +1,5 @@
 import { FETCH_COLLECTION } from './types';
-import { fetchApiCollection } from '../../utils';
+import { CollectionApi } from '../../utils';
 
 /**
  * fetchPhotos(arg1, arg2)
@@ -16,9 +16,9 @@ export const fetchPhotos = (name, data) => ({
 /**
  * fetchCollection(arg)
  * - @param {String} name
- * - @returns {Function} dispatch()
+ * - @return {Promise}
  */
 export const fetchCollection = name => async dispatch => {
-  const data = await fetchApiCollection(name);
+  const data = await CollectionApi.fetchCollection(name);
   return dispatch(fetchPhotos(name, data));
 };

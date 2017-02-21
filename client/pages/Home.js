@@ -25,8 +25,9 @@ class Home extends Component {
     })();
   }
   /**
-   * _onClick(colleciton)
-   * - @param collection: string
+   * _onClick(arg)
+   * - @param {String} collection
+   * - @return ??? {Object} || {Funciton}
    * - calls for fetch of collection of photos by ${collection} to /api/v1.
    * - updates state.carousel.
    * - redirects to /portfolio/${collection}.

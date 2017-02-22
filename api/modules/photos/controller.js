@@ -1,5 +1,5 @@
 import Photo from './model';
-import Collection from '../collections';
+import Category from '../categories';
 
 /**
  * PhotoApi
@@ -17,14 +17,14 @@ export class PhotoApi {
     // create new Photo.
     const photo = new Photo({ url });
     // find collection to put Photo in.
-    const collection = Collection.find(name);
+    const category = Category.find({ $query: { name } }).exec();
     // push Photo to collection.list.
-    collection.list.push(photo);
+    category.list.push(photo);
     try {
       return res.status(200).json({
         error: false,
-        message: `Photo added to ${name} collection!`,
-        [name]: await Promise.all([photo.save(), collection.save()])
+        message: `Photo added to ${name} category!`,
+        [name]: await Promise.all([photo.save(), category.save()])
       });
     } catch (error) {
       return res.status(500).json({ error: true, message: 'Internal Server Error.' });

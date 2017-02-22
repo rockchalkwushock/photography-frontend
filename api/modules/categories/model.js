@@ -1,13 +1,13 @@
 import mongoose, { Schema } from 'mongoose';
 
 /**
- * CollectionSchema
- * - Collection is a unique array holding the Photos of that type.
+ * CategorySchema
+ * - Category is a unique array holding the Photos of that type.
  * - i.e. [{ Photo1 }, { Photo2 }, { Photo3 }]
  */
-const CollectionSchema = new Schema({
-  // Declare a unique name for each collection.
-  category: {
+const CategorySchema = new Schema({
+  // Declare a unique name for each category.
+  name: {
     required: true,
     type: String,
     unique: true
@@ -19,4 +19,4 @@ const CollectionSchema = new Schema({
   }]
 });
 
-export default mongoose.model('collecitons', CollectionSchema);
+export default mongoose.model('categories', CategorySchema);

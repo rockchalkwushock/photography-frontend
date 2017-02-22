@@ -15,9 +15,7 @@ export class CategoryApi {
    */
   async createCategory(req, res) {
     const { name } = req.body;
-    console.log(name);
     const category = new Category({ name, list: [] });
-    console.log(category);
     try {
       return res.status(200).json({
         [name]: await category.save(),

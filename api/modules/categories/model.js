@@ -19,4 +19,26 @@ const CategorySchema = new Schema({
   }]
 });
 
+/**
+ * addPhoto(arg1, arg2)
+ * - @param {String} name
+ * - @param {String} imageUrl
+ * - @return {Promise} saved Photo, updated array on Category.
+ * - NOTE: Schema.statics allows for creating methods
+ * - on the Schema class.
+ */
+CategorySchema.statics.addPhoto = async function (name, imageUrl) {
+  // Import Photo Model.
+  const Photo = mongoose.model('photos');
+  // Create a new instance of Photo.
+  const photo = await new Photo({ url: imageUrl, category: name });
+  // Find the corresponding category & push the new photo to the list key/value.
+  const list = await this.findOneAndUpdate(name, { $push: { list: photo } });
+  // Return a saved photo and update the array 'list' on the specified category.
+  return {
+    photo: await photo.save(),
+    list
+  };
+};
+
 export default mongoose.model('categories', CategorySchema);

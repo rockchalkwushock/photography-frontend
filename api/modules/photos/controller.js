@@ -1,33 +1,34 @@
 import Photo from './model';
-import Category from '../categories';
+import { Category } from '../categories';
 
 /**
  * PhotoApi
- * - @method createPhoto(arg1, arg2)
+ * - @method addPhoto(arg1, arg2)
  */
 export class PhotoApi {
-  /**
-   * createPhoto(arg1, arg2)
-   * - @param {Object} req
-   * - @param {Object} res
-   * - @return {Object} res
-   */
-  async createPhoto(req, res) {
-    const { name, url } = req.body;
-    // create new Photo.
+  async addPhoto(req, res) {
+    // 1. Take in req.params & req.body.
+    const { name } = req.params;
+    const { url } = req.body;
+    // 2. Create a new instance of Photo.
     const photo = new Photo({ url });
-    // find collection to put Photo in.
-    const category = Category.find({ $query: { name } }).exec();
-    // push Photo to collection.list.
-    category.list.push(photo);
+    // 3. User 'name' to query correct category for Photo to be added too.
+    const category = await Category.findOneAndUpdate(
+      // Query object.
+      { name },
+      // Update object.
+      { $push: { list: [photo] } }
+    );
+    // 4. Return success object or failure object.
     try {
       return res.status(200).json({
         error: false,
         message: `Photo added to ${name} category!`,
-        [name]: await Promise.all([photo.save(), category.save()])
+        [name]: await category.save(),
+        photo: await photo.save()
       });
-    } catch (error) {
-      return res.status(500).json({ error: true, message: 'Internal Server Error.' });
+    } catch (e) {
+      console.log(e);
     }
   }
 }

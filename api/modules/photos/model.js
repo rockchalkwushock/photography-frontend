@@ -10,6 +10,10 @@ const PhotoSchema = new Schema({
     required: true,
     type: String,
     unique: true
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: 'category'
   }
 }, { timestamps: true });
 

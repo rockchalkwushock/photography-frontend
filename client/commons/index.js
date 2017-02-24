@@ -1,5 +1,6 @@
 import Card from './Card';
 import Image from './Image';
+import InputField from './InputField';
 import LegalBar from './LegalBar';
 import Loader from './Loader';
 import NavBar from './NavBar';
@@ -13,6 +14,7 @@ import Title from './Title';
 export {
   Card,
   Image,
+  InputField,
   LegalBar,
   Loader,
   NavBar,

@@ -13,11 +13,19 @@ export class CollectionApi {
   */
   async fetchCollection(name) {
     try {
-      const { data } = await axios.get(`/api/v1/collection/${name}`);
+      const { data } = await axios.get(`/collection/${name}`); // This is not right!!!!
       return data;
     } catch (e) {
       // Want to access data.error so that if it is true
       // I can return to the front-end only data.message.
+      console.log(e);
+    }
+  }
+  async createCategory(name) {
+    try {
+      const { data } = await axios.post('/category', { name });
+      return data;
+    } catch (e) {
       console.log(e);
     }
   }

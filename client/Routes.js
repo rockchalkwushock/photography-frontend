@@ -35,6 +35,17 @@ const componentRoutes = {
       }
     },
     {
+      path: '/upload',
+      async getComponent(location, cb) {
+        try {
+          const module = await import('./pages/Upload');
+          cb(null, module.default);
+        } catch (e) {
+          errorLoading(e);
+        }
+      }
+    },
+    {
       path: '*',
       async getComponent(location, cb) {
         try {

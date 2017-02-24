@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux/es';
 import { routerReducer } from 'react-router-redux';
-import { carouselReducer } from '../../modules';
+import { reducer as formReducer } from 'redux-form/es';
+import { carouselReducer, uploadReducer } from '../../modules';
 /**
  * rootReducer(arg)
  * - @param {Object} reducers
@@ -8,5 +9,7 @@ import { carouselReducer } from '../../modules';
  */
 export default combineReducers({
   carousel: carouselReducer,
-  routing: routerReducer
+  form: formReducer,
+  routing: routerReducer,
+  upload: uploadReducer
 });

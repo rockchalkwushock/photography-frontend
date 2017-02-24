@@ -6,8 +6,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const VENDOR_LIBS = [
   'axios', 'nuka-carousel', 'react',
   'react-dom', 'react-redux', 'react-router',
-  'react-router-redux', 'redux', 'redux-thunk',
-  'styled-components'
+  'react-router-redux', 'redux', 'redux-form',
+  'redux-thunk', 'styled-components'
 ];
 
 module.exports = {
@@ -36,7 +36,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        loader: ExtractTextPlugin.extract({
+        use: ExtractTextPlugin.extract({
           loader: 'css-loader'
         }),
         test: /\.css$/
@@ -62,6 +62,11 @@ module.exports = {
     port: 9000,
     hot: true,
     historyApiFallback: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000'
+      }
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

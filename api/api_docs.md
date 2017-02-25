@@ -33,7 +33,7 @@ GET http://localhost:3000/category/<CATEGROY>
 | :-------------| :------------- |
 | CATEGORY | The category to retrieve.
 ```bash
-curl curl -X GET "http://localhost:3000/category/family"
+curl -X GET "http://localhost:3000/category/family"
 ```
 #### Response
 ```json

@@ -47,7 +47,7 @@ export class CategoryApi {
       return res.status(200).json({
         [name]: await category.save(),
         error: false,
-        message: `${name} create!`
+        message: `${name} created!`
       });
     } catch (e) {
       return res.status(422).json({

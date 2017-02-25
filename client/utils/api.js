@@ -3,7 +3,8 @@ import './axiosConfig';
 
 /**
  * CollectionApi
- * - @method fetchCollection(name)
+ * - @method createCategory(arg)
+ * - @method fetchCollection(arg)
  */
 export class CollectionApi {
   /**
@@ -22,8 +23,19 @@ export class CollectionApi {
     }
   }
   async createCategory(name) {
+    console.log(`createCategory: ${name}`);
     try {
       const { data } = await axios.post('/category', { name });
+      return data;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  async uploadImageUrl(name, url) {
+    console.log(name);
+    try {
+      const { data } = await axios.post(`/category/${name}`, { url });
+      console.log(data);
       return data;
     } catch (e) {
       console.log(e);

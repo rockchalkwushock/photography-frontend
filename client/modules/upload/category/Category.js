@@ -13,7 +13,7 @@ import { fetchCategory } from '../actions';
 })
 export default class Category extends Component {
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit, fetchCategory } = this.props; // eslint-disable-line
     return (
       <div>
         <form onSubmit={handleSubmit(fetchCategory)}>

@@ -23,17 +23,15 @@ export class CategoryApi {
     validate.nameCheck(name, res);
     validate.urlCheck(url, res);
     try {
-      const list = await Category.addPhoto(name, { url });
       return res.status(201).json({
         error: false,
-        category: list,
+        category: await Category.addPhoto(name, { url }),
         message: 'Photo successfully added!'
       });
     } catch (e) {
       return res.status(400).json({
         error: true,
-        usr_msg: 'Photo cannot be added to category!',
-        e_msg: e
+        message: 'Photo cannot be added to category!'
       });
     }
   }
@@ -46,18 +44,17 @@ export class CategoryApi {
   async createCategory(req, res) {
     const { name } = req.body;
     validate.nameCheck(name, res);
-    const category = new Category({ name, photos: [] });
+    const category = Category({ name });
     try {
-      return res.status(200).json({
-        category: await category.save(),
+      return res.status(201).json({
+        [name]: await category.save(),
         error: false,
         message: `${name} created!`
       });
     } catch (e) {
       return res.status(422).json({
         error: true,
-        usr_msg: 'Cannot create category.',
-        e_msg: e
+        message: 'Cannot create category.'
       });
     }
   }
@@ -71,13 +68,13 @@ export class CategoryApi {
     try {
       return res.status(200).json({
         error: false,
-        categories: await Category.find({}).exec()
+        categories: await Category.find({}).exec(),
+        message: 'Categories retrieved.'
       });
     } catch (e) {
       return res.status(500).json({
         error: true,
-        usr_msg: 'Internal Server Error.',
-        e_msg: e
+        message: 'Internal Server Error.'
       });
     }
   }
@@ -93,14 +90,13 @@ export class CategoryApi {
     try {
       return res.status(200).json({
         error: false,
-        category: await Category.findOne({ $query: { name } }).exec(),
+        category: await Category.findOne({ name }),
         message: `${name} found!`
       });
     } catch (e) {
       return res.status(500).json({
         error: true,
-        usr_msg: 'Internal Server Error.',
-        e_msg: e
+        message: 'Internal Server Error.'
       });
     }
   }

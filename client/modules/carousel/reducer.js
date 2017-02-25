@@ -1,6 +1,6 @@
 import {
-  FETCH_COLLECTION,
-  FETCH_COLLECTION_ERROR
+  FETCH_CATEGROY,
+  FETCH_CATEGROY_ERROR
 } from './types';
 
 const initialState = {
@@ -25,11 +25,16 @@ const initialState = {
  * - data = Object { error, message, [name] }
  */
 export default (state = initialState, action) => {
+  console.log(action);
   const { data, name, type } = action;
   switch (type) {
-    case FETCH_COLLECTION:
-      return { ...state, [name]: data[name] };
-    case FETCH_COLLECTION_ERROR:
+    case FETCH_CATEGROY:
+      return {
+        ...state,
+        [name]: name
+        // message: data.message
+      };
+    case FETCH_CATEGROY_ERROR:
       return { ...state, error: data.error, message: data.message };
     default:
       return state;

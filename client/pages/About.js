@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux/es';
-import { fetchCollection } from '../modules';
+import { fetchCategory } from '../modules';
 import { Image, Loader, ProfilePic, TextArea } from '../commons';
 
 @connect(
   state => ({
     photo: state.carousel.about
   }),
-  { fetchCollection }
+  { fetchCategory }
 )
 class About extends Component {
   state = { loading: true }
@@ -19,7 +19,7 @@ class About extends Component {
    */
   componentDidMount() {
     (async () => {
-        await this.props.fetchCollection('about');
+        await this.props.fetchCategory('about');
         this.setState({ loading: false });
     })();
   }

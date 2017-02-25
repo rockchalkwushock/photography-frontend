@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router/es';
 import { connect } from 'react-redux/es';
 import { Card, Image, Loader } from '../commons';
-import { fetchCollection } from '../modules';
+import { fetchCategory } from '../modules';
 
 @connect(
   state => ({
     photos: state.carousel.home
   }),
-  { fetchCollection }
+  { fetchCategory }
 )
 class Home extends Component {
   state = { loading: true }
@@ -20,24 +20,25 @@ class Home extends Component {
    */
   componentDidMount() {
     (async () => {
-        await this.props.fetchCollection('home');
+        await this.props.fetchCategory('home');
         this.setState({ loading: false });
     })();
   }
   /**
    * _onClick(arg)
-   * - @param {String} collection
+   * - @param {String} category
    * - @return {Promise}
-   * - calls for fetch of collection of photos by ${collection} to /api/v1.
+   * - calls for fetch of category of photos by ${category} to /api/v1.
    * - updates state.carousel.
-   * - redirects to /portfolio/${collection}.
+   * - redirects to /portfolio/${category}.
    */
-  async _onClick(collection) {
-    await this.props.fetchCollection(collection);
-    browserHistory.push(`/portfolio/${collection}`);
+  async _onClick(category) {
+    await this.props.fetchCategory(category);
+    browserHistory.push(`/portfolio/${category}`);
   }
   render() {
     const { photos } = this.props;
+    console.log(photos);
     if (this.state.loading) {
       return <Loader />;
     } else if (photos.length === 0) {

@@ -1,7 +1,7 @@
-import { FETCH_COLLECTION } from './types';
-import { CollectionApi } from '../../utils/api';
+import { FETCH_CATEGROY } from './types';
+import { Api } from '../../utils/api';
 
-const collectionApi = new CollectionApi();
+const api = new Api();
 
 /**
  * fetchPhotos(arg1, arg2)
@@ -10,17 +10,17 @@ const collectionApi = new CollectionApi();
  * - @return {Object} action
  */
 export const fetchPhotos = (name, data) => ({
-  type: FETCH_COLLECTION,
+  type: FETCH_CATEGROY,
   name,
   data
 });
 
 /**
- * fetchCollection(arg)
+ * fetchCategory(arg)
  * - @param {String} name
  * - @return {Promise}
  */
-export const fetchCollection = name => async dispatch => {
-  const data = await collectionApi.fetchCollection(name);
+export const fetchCategory = name => async dispatch => {
+  const data = await api.fetchCategory(name);
   return dispatch(fetchPhotos(name, data));
 };

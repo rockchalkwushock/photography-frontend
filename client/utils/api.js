@@ -2,19 +2,19 @@ import axios from 'axios';
 import './axiosConfig';
 
 /**
- * CollectionApi
+ * Api
  * - @method createCategory(arg)
- * - @method fetchCollection(arg)
+ * - @method fetchCategory(arg)
  */
-export class CollectionApi {
+export class Api {
   /**
-   * CollectionApi.fetchCollection(arg)
+   * Api.fetchCategory(arg)
    * - @param {String} name
    * - @return {Object} { data } = res || res.data
   */
-  async fetchCollection(name) {
+  async fetchCategory(name) {
     try {
-      const { data } = await axios.get(`/collection/${name}`); // This is not right!!!!
+      const { data } = await axios.get(`/category/${name}`);
       return data;
     } catch (e) {
       // Want to access data.error so that if it is true

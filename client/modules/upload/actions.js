@@ -1,7 +1,7 @@
 import { FETCH_CATEGORY, FETCH_IMAGEURL } from './types';
-import { CollectionApi } from '../../utils/api';
+import { Api } from '../../utils/api';
 
-const api = new CollectionApi();
+const api = new Api();
 /**
  * categoryAction(arg, arg2)
  * - @param {String} category

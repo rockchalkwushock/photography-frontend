@@ -2,8 +2,6 @@ import mongoose, { Schema } from 'mongoose';
 
 /**
  * CategorySchema
- * - Category represents a unique category that holds a collection of imageUrls.
- * - i.e. { photos: ['https://myPhoto.jpg', 'https://myPhoto2.jpg']}
  */
 const CategorySchema = new Schema({
   // Declare a unique name for each category.
@@ -13,14 +11,11 @@ const CategorySchema = new Schema({
     unique: true
   },
   // This is the array of images.
-  photos: [{
-    type: String,
-    unique: true
-  }]
+  photos: []
 });
 
 /**
- * addPhoto(arg1, arg2)
+ * addPhoto(arg, arg2)
  * - @param {String} name
  * - @param {Object} image
  * - @return {Promise} saved Photo, updated array on Category.

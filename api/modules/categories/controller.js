@@ -93,7 +93,8 @@ export class CategoryApi {
     try {
       return res.status(200).json({
         error: false,
-        [name]: await Category.find({ $query: { name } }).exec()
+        category: await Category.findOne({ $query: { name } }).exec(),
+        message: `${name} found!`
       });
     } catch (e) {
       return res.status(500).json({

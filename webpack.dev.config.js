@@ -63,8 +63,12 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     proxy: {
-      '/api': {
-        target: 'http://localhost:3000'
+      '/api/**': {
+        target: 'http://localhost:3000',
+        rewrite: req => (
+          req.url = req.url.replace(/^\/api/, '') // eslint-disable-line
+        ),
+        changeOrigin: true
       }
     }
   },

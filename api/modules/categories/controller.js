@@ -24,7 +24,11 @@ export class CategoryApi {
     validate.urlCheck(url, res);
     try {
       const list = await Category.addPhoto(name, { url });
-      return res.status(201).json({ error: false, list });
+      return res.status(201).json({
+        error: false,
+        category: list,
+        message: 'Photo successfully added!'
+      });
     } catch (e) {
       return res.status(400).json({
         error: true,
@@ -45,7 +49,7 @@ export class CategoryApi {
     const category = new Category({ name, photos: [] });
     try {
       return res.status(200).json({
-        [name]: await category.save(),
+        category: await category.save(),
         error: false,
         message: `${name} created!`
       });

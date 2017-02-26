@@ -19,7 +19,6 @@ const categoryAction = data => ({
  * - @return {Promise}
  */
 export const fetchCategory = ({ category }) => async dispatch => {
-  console.log(`fetchCategory: ${category}`);
   const data = await api.createCategory(category);
   return dispatch(categoryAction(data));
 };

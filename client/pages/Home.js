@@ -6,7 +6,7 @@ import { fetchCategory } from '../modules';
 
 @connect(
   state => ({
-    photos: state.carousel.home
+    photos: state.carousel
   }),
   { fetchCategory }
 )
@@ -14,8 +14,8 @@ class Home extends Component {
   state = { loading: true }
   /**
    * componentDidMount
-   * - calls for fetching of initial photos for Home.
-   * - updates state.carousel.home
+   * - calls for fetching of images for Home.
+   * - populates state.carousel.home
    * - changes state of loading to false.
    */
   componentDidMount() {
@@ -28,8 +28,8 @@ class Home extends Component {
    * _onClick(arg)
    * - @param {String} category
    * - @return {Promise}
-   * - calls for fetch of category of photos by ${category} to /api/v1.
-   * - updates state.carousel.
+   * - fetches collection of images by category name.
+   * - updates state.carousel[category].
    * - redirects to /portfolio/${category}.
    */
   async _onClick(category) {
@@ -38,39 +38,28 @@ class Home extends Component {
   }
   render() {
     const { photos } = this.props;
+    const { home } = photos; // the exact array of images needed.
     if (this.state.loading) {
       return <Loader />;
-    } else if (photos.length === 0) {
+    } else if (home.length === 0) {
       return <h1>No Photos Found</h1>; // TODO: Find a better handler.
     }
     return (
       <div className="homepage">
         <div className="top">
-          <Card
-            photos={photos.family} // pass to AppCarousel the exact array of images needed.
-            onClick={() => this._onClick('family')}
-          >
-            <Image src={photos[0]} />
+          <Card onClick={() => this._onClick('family')}>
+            <Image src={home[0]} />
           </Card>
-          <Card
-            photos={photos.portrait}
-            onClick={() => this._onClick('portrait')}
-          >
-            <Image src={photos[1]} />
+          <Card onClick={() => this._onClick('portrait')}>
+            <Image src={home[1]} />
           </Card>
         </div>
         <div className="bottom">
-          <Card
-            photos={photos.travel}
-            onClick={() => this._onClick('travel')}
-          >
-            <Image src={photos[2]} />
+          <Card onClick={() => this._onClick('travel')}>
+            <Image src={home[2]} />
           </Card>
-          <Card
-            photos={photos.wedding}
-            onClick={() => this._onClick('wedding')}
-          >
-            <Image src={photos[3]} />
+          <Card onClick={() => this._onClick('wedding')}>
+            <Image src={home[3]} />
           </Card>
         </div>
       </div>

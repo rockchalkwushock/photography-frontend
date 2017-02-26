@@ -1,4 +1,4 @@
-import { FETCH_CATEGORY, FETCH_IMAGEURL } from './types';
+import { ADD_CATEGORY, ADD_IMAGEURL } from './types';
 import { Api } from '../../utils/api';
 
 const api = new Api();
@@ -9,7 +9,7 @@ const api = new Api();
  * - @return {Object} action
  */
 const categoryAction = data => ({
-  type: FETCH_CATEGORY,
+  type: ADD_CATEGORY,
   data
 });
 
@@ -24,7 +24,7 @@ export const fetchCategory = ({ category }) => async dispatch => {
 };
 
 const imageAction = data => ({
-  type: FETCH_IMAGEURL,
+  type: ADD_IMAGEURL,
   data
 });
 

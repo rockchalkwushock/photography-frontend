@@ -1,41 +1,40 @@
 import {
-  FETCH_CATEGORY,
-  FETCH_CATEGORY_ERROR,
-  FETCH_IMAGEURL,
-  FETCH_IMAGEURL_ERROR
+  ADD_CATEGORY,
+  ADD_CATEGORY_ERROR,
+  ADD_IMAGEURL,
+  ADD_IMAGEURL_ERROR
 } from './types';
 
-const initialState = {
-  category: '',
-  error: false,
-  message: '',
-  photos: []
-};
-
-export default (state = initialState, action) => {
+/**
+ * uploadReducer(arg, arg2)
+ * - @param {Object} state
+ * - @param {Object} action
+ * - @return {Object} state
+ */
+export default (state = {}, action) => {
   const { data, type } = action;
   switch (type) {
-    case FETCH_CATEGORY:
+    case ADD_CATEGORY:
       return {
         ...state,
         category: data.category.name,
         message: data.message,
         photos: [...data.category.photos]
       };
-    case FETCH_CATEGORY_ERROR:
+    case ADD_CATEGORY_ERROR:
       return {
         ...state,
         error: data.error,
         message: data.message,
       };
-    case FETCH_IMAGEURL:
+    case ADD_IMAGEURL:
       return {
         ...state,
         category: data.category.name,
         message: data.message,
         photos: [...data.category.photos] // still behind by one POST
       };
-    case FETCH_IMAGEURL_ERROR:
+    case ADD_IMAGEURL_ERROR:
       return {
         ...state,
         error: data.error,

@@ -1,17 +1,12 @@
 import { FETCH_CATEGROY, FETCH_CATEGROY_ERROR } from './types';
 
-const initialState = {
-  error: false,
-  message: ''
-};
-
 /**
- * carouselReducer(arg1, arg2)
+ * carouselReducer(arg, arg2)
  * - @param {Object} state
  * - @param {Object} action
  * - @return {Object} state
  */
-export default (state = initialState, action) => {
+export default (state = {}, action) => {
   const { data, name, type } = action;
   switch (type) {
     case FETCH_CATEGROY:

@@ -24,7 +24,7 @@ const CategorySchema = new Schema({
  */
 CategorySchema.statics.addPhoto = async function (name, image) {
   // Find category 'name' & push the imageUrl to the key 'photos' array.
-  const list = await this.findOneAndUpdate(name, { $push: { photos: image.url } });
+  const list = await this.findOneAndUpdate({ name }, { $push: { photos: image.url } });
   // Return the updated category.
   return list;
 };

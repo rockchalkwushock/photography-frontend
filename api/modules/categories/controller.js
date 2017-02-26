@@ -47,7 +47,7 @@ export class CategoryApi {
     const category = Category({ name });
     try {
       return res.status(201).json({
-        [name]: await category.save(),
+        category: await category.save(),
         error: false,
         message: `${name} created!`
       });
@@ -90,7 +90,7 @@ export class CategoryApi {
     try {
       return res.status(200).json({
         error: false,
-        category: await Category.findOne({ name }),
+        category: await Category.findOne({ name }).exec(),
         message: `${name} found!`
       });
     } catch (e) {

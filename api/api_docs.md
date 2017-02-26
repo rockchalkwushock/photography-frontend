@@ -59,7 +59,7 @@ curl -X POST "http://localhost:3000/category"
 #### Response
 ```json
 {
-  "family": {
+  "category": {
     "__v": 0,
     "name": "family",
     "_id": "58b20ab4329eca4d2dc14c2e",

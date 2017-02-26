@@ -38,7 +38,6 @@ class Home extends Component {
   }
   render() {
     const { photos } = this.props;
-    console.log(photos);
     if (this.state.loading) {
       return <Loader />;
     } else if (photos.length === 0) {

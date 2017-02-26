@@ -5,8 +5,20 @@ import './axiosConfig';
  * Api
  * - @method createCategory(arg)
  * - @method fetchCategory(arg)
+ * - @method uploadImageUrl(arg, arg2)
  */
 export class Api {
+  /**
+   * Api.createCategory(arg)
+   * - @param {String} name
+   * - @return {Object} { data } = res || res.data
+  */
+  async createCategory(name) {
+    try {
+      const { data } = await axios.post('/category', { name });
+      return data;
+    } catch (e) { console.log(e); }
+  }
   /**
    * Api.fetchCategory(arg)
    * - @param {String} name
@@ -16,44 +28,18 @@ export class Api {
     try {
       const { data } = await axios.get(`/category/${name}`);
       return data;
-    } catch (e) {
-      // Want to access data.error so that if it is true
-      // I can return to the front-end only data.message.
-      console.log(e);
-    }
+    } catch (e) { console.log(e); }
   }
-  async createCategory(name) {
-    console.log(`createCategory: ${name}`);
-    try {
-      const { data } = await axios.post('/category', { name });
-      return data;
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  /**
+   * Api.uploadImageUrl(arg, arg2)
+   * - @param {String} name
+   * - @param {String} url
+   * - @return {Object} { data } = res || res.data
+  */
   async uploadImageUrl(name, url) {
-    console.log(name);
     try {
       const { data } = await axios.post(`/category/${name}`, { url });
-      console.log(data);
       return data;
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (e) { console.log(e); }
   }
 }
-
-// NOTE: res.data
-/**
- * CODE 200
- * {
- *  error: false,
- *  [name]: array,
- * }
- *
- * CODE 500
- * {
- *  error: true,
- *  message: 'Internal Server Error.',
- * }
- */

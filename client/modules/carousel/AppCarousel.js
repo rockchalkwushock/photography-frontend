@@ -12,6 +12,7 @@ class AppCarousel extends Component {
         showThumbnails={false}
         showPlayButton={false}
         showFullscreenButton={false}
+        disableArrowKeys={false}
         // onImageError:Func
         // slideDuration:Int
         // onImageLoad:Func

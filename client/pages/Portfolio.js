@@ -19,15 +19,19 @@ class Portfolio extends Component {
     this.setState({ loading: false });
   }
 
+  /**
+   * _createGallery(arg)
+   * @param {Array} images
+   * @returns {Array} gallery
+   */
   _createGallery(images) {
     const gallery = images.reduce((array, image) => {
       array.push({
         original: image,
-        sizes: '(max-width: 320px) 280px, (max-width: 480px) 440px, 800px'
+        sizes: '(max-width: 20em) 17.5em, (max-width: 30em) 27.5em, 50em'
       });
       return array;
     }, []);
-    console.log(gallery); // [object]
     return gallery;
   }
 
@@ -38,7 +42,6 @@ class Portfolio extends Component {
     if (this.state.loading) return <Loader />;
     if (images.length < 1) return <h1>No Photos Found</h1>;
     const gallery = this._createGallery(images);
-    console.log(gallery); // promise resolved, promise value undefined.
     return (
       <div className="portfoliopage">
         <AppCarousel gallery={gallery} />

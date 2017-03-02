@@ -24,7 +24,7 @@ class Home extends Component {
         this.setState({ loading: false });
     })();
   }
-  /**
+   /**
    * _onClick(arg)
    * - @param {String} category
    * - @return {Promise}

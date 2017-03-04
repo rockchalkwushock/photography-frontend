@@ -10,12 +10,8 @@ const CategorySchema = new Schema({
     type: String,
     unique: true
   },
-  // This is the collection object.
-  photos: {
-    mobile: [],
-    tablet: [],
-    desktop: []
-  }
+  // This is the array of imageUrls.
+  photos: []
 });
 
 /**

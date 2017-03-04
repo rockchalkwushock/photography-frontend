@@ -38,7 +38,7 @@ class Home extends Component {
   }
   render() {
     const { photos } = this.props;
-    const { home } = photos; // the exact array of images needed.
+    const { home } = photos;
     if (this.state.loading) {
       return <Loader />;
     } else if (home.length === 0) {
@@ -47,7 +47,7 @@ class Home extends Component {
     return (
       <div className="homepage">
         <div className="top">
-          <Card onClick={() => this._onClick('family')}>
+          <Card onClick={() => this._onClick('travel')}>
             <Image src={home[0]} />
           </Card>
           <Card onClick={() => this._onClick('portrait')}>
@@ -55,7 +55,7 @@ class Home extends Component {
           </Card>
         </div>
         <div className="bottom">
-          <Card onClick={() => this._onClick('travel')}>
+          <Card onClick={() => this._onClick('family')}>
             <Image src={home[2]} />
           </Card>
           <Card onClick={() => this._onClick('wedding')}>

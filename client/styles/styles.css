@@ -37,6 +37,7 @@ body,
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 15vh;
 }
 
 .homepage {
@@ -45,6 +46,7 @@ body,
   flex-direction: column;
   padding: .25em;
   overflow-y: scroll;
+  height: 70vh;
 }
 
 .homepage > * {
@@ -57,7 +59,7 @@ body,
 }
 
 .footer {
-  height: 17vh;
+  height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;

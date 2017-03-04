@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslate } from 'react-redux-multilingual';
 import { browserHistory } from 'react-router/es';
 import {
   NavBar,
@@ -7,19 +8,19 @@ import {
   SubTitle
 } from '../commons';
 
-const Header = () => (
+const Header = ({ translate }) => (
   <div className="heading">
     <div className="titles">
-      <Title>Masha Eltsova</Title>
-      <SubTitle>Photography</SubTitle>
+      <Title>{translate('title')}</Title>
+      <SubTitle>{translate('subtitle')}</SubTitle>
     </div>
     <div className="navigation">
       <NavBar>
-        <NavItem onClick={() => browserHistory.push('/')}>Home</NavItem>
-        <NavItem onClick={() => browserHistory.push('/about')}>About</NavItem>
+        <NavItem onClick={() => browserHistory.push('/')}>{translate('home')}</NavItem>
+        <NavItem onClick={() => browserHistory.push('/about')}>{translate('about')}</NavItem>
       </NavBar>
     </div>
   </div>
 );
 
-export default Header;
+export default withTranslate(Header);

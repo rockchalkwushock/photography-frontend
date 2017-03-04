@@ -1,10 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import { IntlActions, IntlProvider } from 'react-redux-multilingual';
 import { AppContainer } from 'react-hot-loader';
 import 'font-awesome/css/font-awesome.css';
 import Root from './Root';
 import { store } from './redux';
+import { translations } from './modules';
 import './styles/styles.css';
 
 if (process.env.NODE_ENV === 'production') {
@@ -16,11 +18,16 @@ if (process.env.NODE_ENV === 'production') {
   require('offline-plugin/runtime').install();
 }
 
+const DEFAULT_LANGUAGE = 'ru';
+store.dispatch(IntlActions.setLocale(DEFAULT_LANGUAGE));
+
 const renderApp = Component => {
   render(
     <AppContainer>
       <Provider store={store}>
-        <Component />
+        <IntlProvider translations={translations}>
+          <Component />
+        </IntlProvider>
       </Provider>
     </AppContainer>,
     document.getElementById('root')

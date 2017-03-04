@@ -5301,6 +5301,12 @@ react-proxy@^3.0.0-alpha.0:
   dependencies:
     lodash "^4.6.1"
 
+react-redux-multilingual@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-redux-multilingual/-/react-redux-multilingual-1.0.2.tgz#8ac1dcf34e124b62b019506349bb719198963ce2"
+  dependencies:
+    hoist-non-react-statics "^1.2.0"
+
 react-redux@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.3.tgz#86c3b68d56e74294a42e2a740ab66117ef6c019f"

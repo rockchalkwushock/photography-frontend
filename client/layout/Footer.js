@@ -1,14 +1,15 @@
 import React from 'react';
+import { withTranslate } from 'react-redux-multilingual';
 import { LegalBar, SocialBar } from '../commons';
 
-const Footer = () => (
+const Footer = ({ translate }) => (
   <div className="footer">
     <SocialBar>
       <a
         className='icon'
         target='_blank'
         rel='noreferrer noopener'
-        href='https://www.facebook.com/'
+        href='https://www.facebook.com/masha.eltsova'
         title='facebook'
       >
           <i className="fa fa-facebook-square fa-2x"></i>
@@ -17,7 +18,7 @@ const Footer = () => (
         className='icon'
         target='_blank'
         rel='noreferrer noopener'
-        href='https://www.instagram.com/?hl=ru'
+        href='https://www.instagram.com/surffgirl/'
         title='instagram'
       >
           <i className="fa fa-instagram fa-2x"></i>
@@ -34,11 +35,11 @@ const Footer = () => (
     <LegalBar>
       <span>
         <i className="fa fa-copyright"></i>
-        2017 RCWS Development.
+        {translate('copyright')}
       </span>
 
     </LegalBar>
   </div>
 );
 
-export default Footer;
+export default withTranslate(Footer);

@@ -1,9 +1,10 @@
 import React from 'react';
+import { withTranslate } from 'react-redux-multilingual';
 import styled from 'styled-components';
 
-const UnstyledLoader = () => (
+const UnstyledLoader = ({ translate }) => (
   <div className='loader'>
-    <h1>Loading...</h1>
+    <h1>{translate('loading')}</h1>
   </div>
 );
 
@@ -13,4 +14,4 @@ const Loader = styled(UnstyledLoader)`
   background-color: lightblue;
 `;
 
-export default Loader;
+export default withTranslate(Loader);

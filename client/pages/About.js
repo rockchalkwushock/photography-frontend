@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux/es';
+import { withTranslate } from 'react-redux-multilingual';
 import { fetchCategory } from '../modules';
 import { Image, Loader, ProfilePic, TextArea } from '../commons';
 
@@ -24,14 +25,14 @@ class About extends Component {
     })();
   }
   render() {
-    const { photo } = this.props;
+    const { photo, translate } = this.props;
     // Should I also check that photo.length === 1?
     // Just to make sure that even though the fetch occurred
     // that the array is populated with a file.
     if (this.state.loading) {
       return <Loader />;
     } else if (photo.length === 0) {
-      return <h1>No Photo Found</h1>; // TODO: Find a better handler.
+      return <h1>{translate('no-photo')}</h1>; // TODO: Find a better handler.
     }
     return (
       <div className="aboutpage">
@@ -39,11 +40,11 @@ class About extends Component {
           <Image src={photo} />
         </ProfilePic>
         <TextArea>
-          <p>This is where the about me section will be!</p>
+          <p>{translate('description')}</p>
         </TextArea>
       </div>
     );
   }
 }
 
-export default About;
+export default withTranslate(About);

@@ -11,7 +11,7 @@ let mongoConf;
 
 if (MODE !== 'production') {
   // development environment
-  mongoConf = 'mongodb://localhost/dev';
+  mongoConf = process.env.MONGODB;
   dbConfig(mongoConf);
 } else {
   app.use(express.static('dist'));

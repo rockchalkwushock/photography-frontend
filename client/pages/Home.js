@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router/es';
+import { withTranslate } from 'react-redux-multilingual';
 import { connect } from 'react-redux/es';
 import { Card, Image, Loader } from '../commons';
 import { fetchCategory } from '../modules';
@@ -37,12 +38,12 @@ class Home extends Component {
     browserHistory.push(`/portfolio/${category}`);
   }
   render() {
-    const { photos } = this.props;
+    const { photos, translate } = this.props;
     const { home } = photos;
     if (this.state.loading) {
       return <Loader />;
     } else if (home.length === 0) {
-      return <h1>No Photos Found</h1>; // TODO: Find a better handler.
+      return <h1>{translate('no-photos')}</h1>; // TODO: Find a better handler.
     }
     return (
       <div className="homepage">
@@ -67,4 +68,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default withTranslate(Home);

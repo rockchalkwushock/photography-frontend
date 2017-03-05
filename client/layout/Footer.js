@@ -1,28 +1,29 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import { withTranslate } from 'react-redux-multilingual';
 import { LegalBar, SocialBar } from '../commons';
 
 const Footer = ({ translate }) => (
   <div className="footer">
     <SocialBar>
-      <a
+      <ReactGA.OutboundLink
         className='icon'
-        target='_blank'
         rel='noreferrer noopener'
-        href='https://www.facebook.com/masha.eltsova'
-        title='facebook'
+        eventLabel='facebook'
+        to='https://www.facebook.com/masha.eltsova'
+        target='_blank'
       >
-          <i className="fa fa-facebook-square fa-2x"></i>
-      </a>
-      <a
+        <i className="fa fa-facebook-square fa-2x"></i>
+      </ReactGA.OutboundLink>
+      <ReactGA.OutboundLink
         className='icon'
-        target='_blank'
         rel='noreferrer noopener'
-        href='https://www.instagram.com/surffgirl/'
-        title='instagram'
+        eventLabel='instagram'
+        to='https://www.instagram.com/surffgirl/'
+        target='_blank'
       >
-          <i className="fa fa-instagram fa-2x"></i>
-      </a>
+        <i className="fa fa-instagram fa-2x"></i>
+      </ReactGA.OutboundLink>
       <a
         className='icon'
         rel='noreferrer noopener'

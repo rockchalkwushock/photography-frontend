@@ -1,8 +1,16 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import { Router } from 'react-router/es';
 import { history } from './redux';
 import App from './layout/App';
 import Home from './pages/Home';
+
+ReactGA.initialize(process.env.G_ANALYTICS, { debug: true });
+
+const logPageView = () => {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+};
 
 const errorLoading = err =>
  console.error('Dynamic page loading failed', err);
@@ -49,5 +57,10 @@ const componentRoutes = {
 };
 
 export default () => (
-  <Router history={history} key={Math.random()} routes={componentRoutes} />
+  <Router
+  history={history}
+  key={Math.random()}
+  onUpdate={logPageView}
+  routes={componentRoutes}
+  />
 );

@@ -1,3 +1,4 @@
+require('dotenv-safe').load();
 const webpack = require('webpack');
 const { join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -6,7 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const VENDOR_LIBS = [
   'axios', 'react', 'react-dom',
   'react-image-gallery', 'react-redux',
-  'react-redux-multilingula', 'react-router',
+  'react-redux-multilingual', 'react-router',
   'react-router-redux', 'redux', 'redux-form',
   'redux-thunk', 'styled-components'
 ];
@@ -71,6 +72,11 @@ module.exports = {
     }
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        G_ANALYTICS: JSON.stringify(process.env.G_ANALYTICS)
+      }
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({

@@ -40,19 +40,6 @@ body,
   height: 15vh;
 }
 
-.homepage {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  padding: .25em;
-  overflow-y: scroll;
-  height: 70vh;
-}
-
-.homepage > * {
-  flex: 1 1 auto;
-}
-
 .bottom,
 .top {
   display: flex;
@@ -69,3 +56,34 @@ body,
 i {
   color: #515E91;
 }
+
+.aboutpage,
+.homepage,
+.page404,
+.portfoliopage {
+  height: 70vh;
+  display: flex;
+}
+
+.aboutpage > *,
+.homepage > *,
+.page404 > *,
+.portfoliopage > * {
+  flex: 1 1 auto;
+}
+
+.homepage {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: .25em;
+  overflow-y: scroll;
+}
+
+.aboutpage {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+

@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { IntlActions, IntlProvider } from 'react-redux-multilingual';
 import { AppContainer } from 'react-hot-loader';
-import 'font-awesome/css/font-awesome.css';
 import Root from './Root';
 import { store } from './redux';
 import { translations } from './modules';

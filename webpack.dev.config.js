@@ -8,7 +8,7 @@ const VENDOR_LIBS = [
   'axios', 'react', 'react-dom',
   'react-image-gallery', 'react-redux',
   'react-redux-multilingual', 'react-router',
-  'react-router-redux', 'redux', 'redux-form',
+  'react-router-redux', 'redux',
   'redux-thunk', 'styled-components'
 ];
 

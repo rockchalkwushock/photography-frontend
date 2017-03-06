@@ -13,7 +13,7 @@ const UnstyledIcon = ({ url, event, name }) => (
   >
     <FontAwesome
       name={name}
-      size='2x'
+      size='lg'
     />
   </ReactGA.OutboundLink>
 );

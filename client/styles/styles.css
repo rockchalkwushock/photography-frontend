@@ -49,12 +49,11 @@ body,
   height: 15vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
-i {
-  color: #515E91;
+.footer > * {
+  flex: 1 1 auto;
+  width: 100vw;
 }
 
 .aboutpage,
@@ -89,4 +88,8 @@ i {
 
 .page404 {
   text-align: center;
+}
+
+a.icon {
+  color: black;
 }

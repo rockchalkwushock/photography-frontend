@@ -26,9 +26,7 @@ class About extends Component {
   }
   render() {
     const { photo, translate } = this.props;
-    // Should I also check that photo.length === 1?
-    // Just to make sure that even though the fetch occurred
-    // that the array is populated with a file.
+    console.log(photo);
     if (this.state.loading) {
       return <Loader />;
     } else if (photo.length === 0) {
@@ -37,7 +35,12 @@ class About extends Component {
     return (
       <div className="aboutpage">
         <ProfilePic>
-          <Image src={photo} />
+          <Image
+            src={photo[0]}
+            alt='profile-pic'
+            srcSet={`${photo[0]}, ${photo[1]}, ${photo[2]}`}
+            sizes='(max-width: 30em) 30em, 100vw'
+          />
         </ProfilePic>
         <TextArea>
           <p>{translate('description')}</p>

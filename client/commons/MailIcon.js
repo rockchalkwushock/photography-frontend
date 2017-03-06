@@ -11,7 +11,7 @@ const UnstyledMailIcon = ({ url, name }) => (
   >
     <FontAwesome
       name={name}
-      size='2x'
+      size='lg'
     />
   </a>
 );

@@ -26,7 +26,6 @@ class About extends Component {
   }
   render() {
     const { photo, translate } = this.props;
-    console.log(photo);
     if (this.state.loading) {
       return <Loader />;
     } else if (photo.length === 0) {

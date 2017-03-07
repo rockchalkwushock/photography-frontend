@@ -10,7 +10,6 @@ middlewaresConfig(app);
 let mongoConf;
 
 if (MODE !== 'production') {
-  // development environment
   mongoConf = process.env.MONGODB;
   dbConfig(mongoConf);
 } else {

@@ -7,7 +7,7 @@ import { categoryRoutes } from '../modules';
 /**
  * middlewaresConfig(arg)
  * - @param {Class} app
- * - @return {Class} app
+ * - @returns {Class} app
  */
 export default app => {
   app.use((req, res, next) => {

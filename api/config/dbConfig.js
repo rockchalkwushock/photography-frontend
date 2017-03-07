@@ -1,10 +1,8 @@
 import mongoose from 'mongoose';
 
 /**
- * dbConfig(conf)
- * - @param conf: string
- * - connects app to MongoDB.
- * - throw error if connection issue.
+ * dbConfig(arg)
+ * - @param {String} conf
  */
 export default (conf) => {
   mongoose.Promise = global.Promise;

@@ -5,7 +5,6 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 class AppCarousel extends Component {
   render() {
     const { gallery } = this.props;
-    console.log(gallery);
     return (
       <ImageGallery
         autoPlay={true}

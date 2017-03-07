@@ -7,20 +7,13 @@ import { AppCarousel, fetchCategory } from '../modules';
 
 @connect(
   state => ({
-    home: state.carousel.home,
     photos: state.carousel
   }),
   { fetchCategory }
 )
 class Home extends Component {
   state = { loading: true }
-  componentWillMount() {
-    // have access to state & props but not DOM.
-    // can intercept the state before the render occurs.
-    console.log('ComponentWillMount');
-  }
   componentDidMount() {
-    console.log('ComponentDidMount');
     (async () => {
       await this.props.fetchCategory('home');
       this.setState({ loading: false });
@@ -31,12 +24,14 @@ class Home extends Component {
     browserHistory.push(`/portfolio/${category}`);
   }
   render() {
-    console.log('render');
-    const { home, translate } = this.props;
+    const { params, photos, translate } = this.props;
     if (this.state.loading) return <Loader />;
+    const { collection } = params;
+    const category = collection === undefined ? 'home' : collection;
+    const images = photos[category];
     return (
       <div className='homepage'>
-        <AppCarousel gallery={home} />
+        <AppCarousel gallery={images} />
         <nav className="nav-portfolio">
           <div className="menu-container">
             <ul>

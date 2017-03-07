@@ -73,11 +73,18 @@ h1.site-title {
 }
 
 .aboutpage,
+.error,
 .homepage,
 .loader,
 .page404 {
   height: 70vh;
   padding: 0.5em 0 0.5em 0;
+}
+
+.error,
+.loader {
+  margin: auto;
+  text-align: center;
 }
 
 .image-gallery,

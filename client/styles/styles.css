@@ -92,10 +92,16 @@ body,
 
 a.icon {
   color: black;
+  padding: 0.5em;
 }
 
 .image-gallery {
   margin: 0 auto;
   width: 65%;
   transition: all 1s ease;
+}
+
+.social,
+.legal {
+  text-align: center;
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import { withTranslate } from 'react-redux-multilingual';
-import { Icon, LegalBar, MailIcon, SocialBar } from '../commons';
+import { Icon, MailIcon } from '../commons';
 
 const Footer = ({ translate }) => (
   <div className="footer">
-    <SocialBar>
+    <div className="social">
       <Icon
         url='https://www.facebook.com/masha.eltsova'
         event='facebook'
@@ -22,14 +22,14 @@ const Footer = ({ translate }) => (
         url='mailto:mashaeltsova@mail.ru'
         name='envelope'
       />
-    </SocialBar>
-    <LegalBar>
+    </div>
+    <div className="legal">
       <span>
         <FontAwesome name='copyright' />
         {translate('copyright')}
       </span>
+    </div>
 
-    </LegalBar>
   </div>
 );
 

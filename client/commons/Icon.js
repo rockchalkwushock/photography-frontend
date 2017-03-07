@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import FontAwesome from 'react-fontawesome';
-import styled from 'styled-components';
 
-const UnstyledIcon = ({ url, event, name }) => (
+const Icon = ({ url, event, name }) => (
   <ReactGA.OutboundLink
     className='icon'
     rel='nreferrer noopener'
@@ -17,9 +16,5 @@ const UnstyledIcon = ({ url, event, name }) => (
     />
   </ReactGA.OutboundLink>
 );
-
-const Icon = styled(UnstyledIcon)`
-
-`;
 
 export default Icon;

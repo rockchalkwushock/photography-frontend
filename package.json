@@ -7,12 +7,13 @@
   "author": "Cody Brunner <rockchalkwushock@icloud.com>",
   "license": "MIT",
   "scripts": {
+    "deploy": "now -e MONGODB=@mongodb G_ANALYTICS=@g_analytics -n alpha-0.1.0 -a masha-eltsova-photography",
+    "pre-deploy": "yarn build",
     "start": "cross-env NODE_ENV=production nodemon index.js",
     "build": "cross-env yarn run clean && NODE_ENV=production webpack -p --progress --profile --colors --config webpack.prod.config.js",
     "clean": "rimraf dist",
     "dev:c": "cross-env NODE_ENV=development webpack-dev-server --colors --profile --config webpack.dev.config.js",
-    "dev:s": "cross-env NODE_ENV=development nodemon index.js",
-    "typecheck": "flow"
+    "dev:s": "cross-env NODE_ENV=development nodemon index.js"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.3",

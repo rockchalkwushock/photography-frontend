@@ -9,7 +9,7 @@ const VENDOR_LIBS = [
   'react-image-gallery', 'react-redux',
   'react-redux-multilingual', 'react-router',
   'react-router-redux', 'redux',
-  'redux-thunk', 'styled-components'
+  'redux-thunk'
 ];
 
 module.exports = {

@@ -3,50 +3,58 @@ import { browserHistory } from 'react-router/es';
 import { withTranslate } from 'react-redux-multilingual';
 import { connect } from 'react-redux/es';
 import { Loader } from '../commons';
-import { AppCarousel, fetchCategory } from '../modules';
+import { fetchCategory } from '../modules';
 
 @connect(
   state => ({
-    photos: state.carousel.home
+    default: state.carousel.home,
+    photos: state.carousel
   }),
   { fetchCategory }
 )
 class Home extends Component {
   state = { loading: true }
-  /**
-   * componentDidMount
-   * - calls for fetching of images for Home.
-   * - populates state.carousel.home
-   * - changes state of loading to false.
-   */
+  componentWillMount() {
+    // have access to state & props but not DOM.
+    // can intercept the state before the render occurs.
+    console.log('ComponentWillMount');
+  }
   componentDidMount() {
+    console.log('ComponentDidMount');
     (async () => {
-        await this.props.fetchCategory('home');
-        this.setState({ loading: false });
+      await this.props.fetchCategory('home');
+      this.setState({ loading: false });
     })();
   }
-   /**
-   * _onClick(arg)
-   * - @param {String} category
-   * - @return {Promise}
-   * - fetches collection of images by category name.
-   * - updates state.carousel[category].
-   * - redirects to /portfolio/${category}.
-   */
   async _onClick(category) {
     await this.props.fetchCategory(category);
     browserHistory.push(`/portfolio/${category}`);
   }
   render() {
-    const { photos, translate } = this.props;
-    if (this.state.loading) {
-      return <Loader />;
-    } else if (photos.length === 0) {
-      return <h1>{translate('no-photos')}</h1>; // TODO: Find a better handler.
-    }
+    console.log('render');
+    const { translate } = this.props;
+    if (this.state.loading) return <Loader />;
     return (
-      <div className="homepage">
-        <AppCarousel gallery={photos} />
+      <div className='homepage'>
+        <div className="image-gallery"></div>
+        <nav className="nav-portfolio">
+          <div className="menu-container">
+            <ul>
+              <li onClick={() => this._onClick('family')}>
+                {translate('family')}
+              </li>
+              <li onClick={() => this._onClick('portrait')}>
+                {translate('portrait')}
+              </li>
+              <li onClick={() => this._onClick('travel')}>
+                {translate('travel')}
+              </li>
+              <li onClick={() => this._onClick('wedding')}>
+                {translate('wedding')}
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     );
   }

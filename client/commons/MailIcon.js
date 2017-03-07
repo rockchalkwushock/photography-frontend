@@ -1,8 +1,7 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-import styled from 'styled-components';
 
-const UnstyledMailIcon = ({ url, name }) => (
+const MailIcon = ({ url, name }) => (
   <a
     className='icon'
     rel='noreferrer noopener'
@@ -15,9 +14,5 @@ const UnstyledMailIcon = ({ url, name }) => (
     />
   </a>
 );
-
-const MailIcon = styled(UnstyledMailIcon)`
-
-`;
 
 export default MailIcon;

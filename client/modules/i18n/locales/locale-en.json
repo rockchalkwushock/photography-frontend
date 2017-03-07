@@ -1,10 +1,14 @@
 {
   "locale": "en",
   "messages": {
-    "title": "Masha Eltsova",
+    "title": "Masha Eltsova Photography",
     "subtitle": "Photography",
     "home": "Home",
     "about": "About",
+    "family": "Family",
+    "portrait": "Portrait",
+    "travel": "Travel",
+    "wedding": "Wedding",
     "copyright": "2017 RCWS Development.",
     "loading": "Loading...",
     "404": "Page Not Found",

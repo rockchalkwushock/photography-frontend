@@ -1,5 +1,4 @@
 @import "~normalize.css";
-
 html {
   box-sizing: border-box;
 }
@@ -12,96 +11,123 @@ html {
 
 body,
 #root {
-  margin: 0;
-  background-color: black;
+  background: black;
+  height: 100vh;
   font-family: SavoyeLetPlain;
 }
 
 .application {
-  background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: auto;
+  background: white;
+  height: 100vh;
+  max-width: 50em;
+  margin: auto;
 }
 
-.application > * {
+.aboutpage > *,
+.application > *,
+footer > *,
+header > *,
+.menu-container ul > *,
+.social ul > * {
   flex: 1 1 auto;
-  width: 100vw;
-  height: auto;
 }
 
-.heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 15vh;
-}
-
-.bottom,
-.top {
-  display: flex;
-}
-
-.footer {
-  height: 15vh;
+.aboutpage,
+footer,
+header,
+.homepage {
   display: flex;
   flex-direction: column;
 }
 
-.footer > * {
-  flex: 1 1 auto;
-  width: 100vw;
+h1.site-title {
+  margin: 0;
+  padding-top: 0.5em;
+  text-align: center;
+}
+
+.social ul,
+.menu-container ul {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 1.25em;
+}
+
+.legal {
+  text-align: center;
+  font-size: 1em;
 }
 
 .aboutpage,
 .homepage,
-.page404,
-.portfoliopage {
-  height: 70vh;
-  display: flex;
-}
-
-.aboutpage > *,
-.homepage > *,
-.page404 > *,
-.portfoliopage > * {
-  flex: 1 1 auto;
-}
-
-.homepage {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  padding: .25em;
-  overflow-y: scroll;
-}
-
-.aboutpage {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
+.loader,
 .page404 {
-  text-align: center;
-}
-
-a.icon {
-  color: black;
+  height: 70vh;
   padding: 0.5em;
 }
 
 .image-gallery {
-  margin: 0 auto;
-  width: 65%;
-  transition: all 1s ease;
+  flex: 11;
+  background: white;
 }
 
-.social,
-.legal {
-  text-align: center;
+.nav-portfolio {
+  flex: 1;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+nav {
+  border-bottom: 1px solid gray;
+}
+.social {
+  padding: 0.5em;
+}
+
+img.profile-pic {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  height: 12.5em;
+  width: 12.5em;
+}
+
+.description {
+  font-size: 1.5em;
+}
+
+
+@media only screen
+and (min-width: 23.438em) /*375*/
+and (max-width: 41.688em) /*667*/
+and (-webkit-min-device-pixel-ratio: 2) {
+  .application {
+    background: lightcoral;
+  }
+  .aboutpage {
+    flex-direction: row;
+  }
+}
+
+@media only screen
+and (min-width: 48em)
+and (max-width: 64em)
+and (-webkit-min-device-pixel-ratio: 2) {
+  .application {
+    background: lightseagreen;
+  }
+}
+
+@media only screen
+and (min-width: 75em)
+and (max-width: 100em)
+and (-webkit-min-device-pixel-ratio: 2) {
+  .application {
+    background: lightsalmon;
+  }
 }

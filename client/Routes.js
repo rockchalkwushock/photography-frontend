@@ -21,10 +21,10 @@ const componentRoutes = {
   indexRoute: { component: Home },
   childRoutes: [
     {
-      path: '/about',
+      path: '/portfolio/:collection',
       async getComponent(location, cb) {
         try {
-          const module = await import('./pages/About');
+          const module = await import('./pages/Home');
           cb(null, module.default);
         } catch (e) {
           errorLoading(e);
@@ -32,10 +32,10 @@ const componentRoutes = {
       }
     },
     {
-      path: '/portfolio/:collection',
+      path: '/about',
       async getComponent(location, cb) {
         try {
-          const module = await import('./pages/Portfolio');
+          const module = await import('./pages/About');
           cb(null, module.default);
         } catch (e) {
           errorLoading(e);

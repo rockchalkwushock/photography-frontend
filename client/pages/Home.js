@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router/es';
 import { withTranslate } from 'react-redux-multilingual';
 import { connect } from 'react-redux/es';
-import { Card, Image, Loader } from '../commons';
-import { fetchCategory } from '../modules';
+import { Loader } from '../commons';
+import { AppCarousel, fetchCategory } from '../modules';
 
 @connect(
   state => ({
-    photos: state.carousel
+    photos: state.carousel.home
   }),
   { fetchCategory }
 )
@@ -39,30 +39,14 @@ class Home extends Component {
   }
   render() {
     const { photos, translate } = this.props;
-    const { home } = photos;
     if (this.state.loading) {
       return <Loader />;
-    } else if (home.length === 0) {
+    } else if (photos.length === 0) {
       return <h1>{translate('no-photos')}</h1>; // TODO: Find a better handler.
     }
     return (
       <div className="homepage">
-        <div className="top">
-          <Card onClick={() => this._onClick('travel')}>
-            <Image src={home[0]} />
-          </Card>
-          <Card onClick={() => this._onClick('portrait')}>
-            <Image src={home[1]} />
-          </Card>
-        </div>
-        <div className="bottom">
-          <Card onClick={() => this._onClick('family')}>
-            <Image src={home[2]} />
-          </Card>
-          <Card onClick={() => this._onClick('wedding')}>
-            <Image src={home[3]} />
-          </Card>
-        </div>
+        <AppCarousel gallery={photos} />
       </div>
     );
   }

@@ -93,3 +93,9 @@ body,
 a.icon {
   color: black;
 }
+
+.image-gallery {
+  margin: 0 auto;
+  width: 65%;
+  transition: all 1s ease;
+}

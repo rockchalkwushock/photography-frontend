@@ -3,11 +3,11 @@ import { browserHistory } from 'react-router/es';
 import { withTranslate } from 'react-redux-multilingual';
 import { connect } from 'react-redux/es';
 import { Loader } from '../commons';
-import { fetchCategory } from '../modules';
+import { AppCarousel, fetchCategory } from '../modules';
 
 @connect(
   state => ({
-    default: state.carousel.home,
+    home: state.carousel.home,
     photos: state.carousel
   }),
   { fetchCategory }
@@ -32,11 +32,11 @@ class Home extends Component {
   }
   render() {
     console.log('render');
-    const { translate } = this.props;
+    const { home, translate } = this.props;
     if (this.state.loading) return <Loader />;
     return (
       <div className='homepage'>
-        <div className="image-gallery"></div>
+        <AppCarousel gallery={home} />
         <nav className="nav-portfolio">
           <div className="menu-container">
             <ul>

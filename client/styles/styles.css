@@ -23,6 +23,7 @@ body,
   height: 100vh;
   max-width: 50em;
   margin: auto;
+  padding: 0.5em;
 }
 
 .aboutpage > *,
@@ -40,6 +41,14 @@ header,
 .homepage {
   display: flex;
   flex-direction: column;
+}
+
+header {
+  border-bottom: 1px solid gray;
+}
+
+footer {
+  border-top: 1px solid gray;
 }
 
 h1.site-title {
@@ -68,23 +77,29 @@ h1.site-title {
 .loader,
 .page404 {
   height: 70vh;
-  padding: 0.5em;
+  padding: 0.5em 0 0.5em 0;
 }
 
-.image-gallery {
+.image-gallery,
+.image-gallery-content,
+.image-gallery-slide-wrapper,
+.image-gallery-swipe,
+.image-gallery-slides,
+.image-gallery-slide {
   flex: 11;
   background: white;
+  overflow-y: hidden;
 }
+
+
 
 .nav-portfolio {
   flex: 1;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
 }
 
-nav {
+/*nav {
   border-bottom: 1px solid gray;
-}
+}*/
 .social {
   padding: 0.5em;
 }
@@ -99,6 +114,10 @@ img.profile-pic {
 
 .description {
   font-size: 1.5em;
+}
+
+a.icon {
+  color: black;
 }
 
 

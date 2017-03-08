@@ -5,7 +5,7 @@ import { history } from './redux';
 import App from './layout/App';
 import Home from './pages/Home';
 
-ReactGA.initialize(process.env.G_ANALYTICS, { debug: true });
+ReactGA.initialize(process.env.G_ANALYTICS);
 
 const logPageView = () => {
   ReactGA.set({ page: window.location.pathname });

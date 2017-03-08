@@ -1,19 +1,13 @@
 CACHE MANIFEST
-#ver:3/5/2017, 3:57:14 PM
+#ver:3/7/2017, 4:29:48 PM
 #plugin:4.6.1
 
 CACHE:
-/"fontawesome-webfont-674f50d287a8c48dc19ba404d20fe713.eot"
-/"fontawesome-webfont-912ec66d7572ff821749319396470bde.svg"
-/"fontawesome-webfont-b06871f281fee6b241d60582ae9369b9.ttf"
-/"fontawesome-webfont-af7ae505a9eed503f8b8e6982036873e.woff2"
-/"fontawesome-webfont-fee66e712a8a08eef5805a46892932ad.woff"
-/0.7b45fcf7ebf686534e0d.js
-/1.984dfce0f18bc076054a.js
-/2.35743ca0210fc15b20e6.js
-/vendor.35a742032b87cfa77739.js
-/bundle.59dc5256e26cfa42be9a.js
-/manifest.fbd8dc4342d5cd8648d6.js
+/0.dc952c1c49a16b9afb9c.js
+/1.f5bb3fb8cbb6291d35a5.js
+/bundle.be03260eaf8f4c3f3263.js
+/vendor.f03328175f60b642b55a.js
+/manifest.5374d2fae2bc8e84f320.js
 /styles.css
 /
 /manifest.json

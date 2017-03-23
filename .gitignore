@@ -38,6 +38,6 @@ jspm_packages
 
 # Other
 .DS_Store
-./dist
+/dist/
 .env
 .vscode

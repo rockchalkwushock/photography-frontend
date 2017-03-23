@@ -1,6 +1,6 @@
 import React from 'react';
 import { withTranslate } from 'react-redux-multilingual';
-import { Icon, MailIcon } from '../commons';
+import { Copyright, Icon, MailIcon } from '../commons';
 
 const Footer = ({ translate }) => (
   <footer>
@@ -8,30 +8,34 @@ const Footer = ({ translate }) => (
       <ul>
         <li>
           <Icon
-            url='https://www.facebook.com/masha.eltsova'
             event='facebook'
             name='facebook-square'
             size='2x'
+            url='https://www.facebook.com/masha.eltsova'
           />
         </li>
         <li>
           <Icon
-            url='https://www.instagram.com/surffgirl/'
             event='instagram'
             name='instagram'
             size='2x'
+            url='https://www.instagram.com/surffgirl/'
           />
         </li>
         <li>
           <MailIcon
-            url='mailto:mashaeltsova@mail.ru'
             name='envelope'
+            url='mailto:mashaeltsova@mail.ru'
           />
         </li>
       </ul>
     </div>
     <div className="legal">
-      {translate('copyright')}
+      <Copyright
+        event='rcws-development'
+        text={translate('copyright')}
+        url='https://rockchalkwushock.github.io/rcws-development/'
+      />
     </div>
   </footer>
 );
